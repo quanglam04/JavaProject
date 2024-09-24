@@ -1,21 +1,31 @@
 package com.example.food_store.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import com.example.food_store.service.UserService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+@RestController
+@RequestMapping("/web")
 public class UserController {
-
+    @Autowired
     private UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
+
+
+    @GetMapping("/home")
+    public ModelAndView getHomePage() {
+        ModelAndView mav = new ModelAndView("index");
+        return mav;
     }
 
-    @RequestMapping("/")
-    public String getHomePage() {
-        return "hello";
+    @GetMapping("/register")
+    public ModelAndView registerPage() {
+        ModelAndView mav = new ModelAndView("register");
+        return mav;
     }
 
 }
