@@ -44,6 +44,12 @@ public class UserController {
         return "admin/user/show";
     }
 
+    @RequestMapping("/admin/user/create")
+    public String getCreateUserPage(Model model) {
+        model.addAttribute("newUser", new User());
+        return "admin/user/create";
+    }
+
     @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
     public String createUser(Model model, @ModelAttribute("newUser") @Valid User trinhlam,
             BindingResult newBindingResult,
@@ -63,9 +69,12 @@ public class UserController {
         trinhlam.setPassword(hashPassword);
 
         trinhlam.setRole(this.userService.getRoleByName(trinhlam.getRole().getName()));
-        System.out.println(this.userService.getRoleByName(trinhlam.getRole().getName()).getId());
+        System.out.println(trinhlam.getRole());
 
         this.userService.handleSaveUser(trinhlam);
+        System.out.println(trinhlam.getEmail());
+        // System.out.println(trinhlam);
+
         return "redirect:/admin/user";
     }
 
@@ -97,12 +106,6 @@ public class UserController {
             this.userService.handleSaveUser(currentUser);
         }
         return "redirect:/admin/user";
-    }
-
-    @RequestMapping("/admin/user/create")
-    public String getCreateUserPage(Model model) {
-        model.addAttribute("newUser", new User());
-        return "admin/user/create";
     }
 
     @GetMapping("/admin/user/delete/{id}")

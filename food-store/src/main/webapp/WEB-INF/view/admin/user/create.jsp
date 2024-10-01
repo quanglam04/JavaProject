@@ -48,10 +48,14 @@
                                             <form:form method="post" action="/admin/user/create"
                                                 modelAttribute="newUser" class="row" enctype="multipart/form-data">
                                                 <div class="mb-3 col-12 col-md-6">
+                                                    <c:set var="EmailHasError">
+                                                        <form:errors path="email" cssClass="invalid-feedback" />
+                                                    </c:set>
                                                     <label class="form-label">Email:</label>
-                                                    <form:input type="email" class="form-control is-invalid"
+                                                    <form:input type="email"
+                                                        class="form-control ${not empty EmailHasError? 'is-invalid':''}"
                                                         path="email" />
-                                                    <form:errors path="email" cssClass="invalid-feedback" />
+                                                    ${EmailHasError}
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <c:set var="passwordHasError">
@@ -91,6 +95,7 @@
                                                         <form:option value="USER">USER</form:option>
                                                     </form:select>
                                                 </div>
+
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label for="avatarFile" class="form-label">Avatar:</label>
                                                     <input class="form-control" type="file" id="avatarFile"

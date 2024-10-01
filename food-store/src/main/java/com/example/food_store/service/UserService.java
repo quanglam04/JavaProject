@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.example.food_store.domain.Role;
 import com.example.food_store.domain.User;
+import com.example.food_store.domain.dto.RegisterDTO;
 import com.example.food_store.repository.RoleRepository;
 import com.example.food_store.repository.UserRepository;
 
@@ -44,6 +45,15 @@ public class UserService {
 
     public Role getRoleByName(String name) {
         return this.roleRepository.findByName(name);
+    }
+
+    public User registerDTOtoUser(RegisterDTO registerDTO) {
+        User user = new User();
+        user.setFullName(registerDTO.getFullName());
+        user.setPassword(registerDTO.getPassword());
+        user.setEmail(registerDTO.getEmail());
+        return user;
+
     }
 
 }
