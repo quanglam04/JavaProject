@@ -1,5 +1,8 @@
 package com.example.food_store.domain.dto;
 
+import com.example.food_store.service.validator.RegisterChecked;
+
+@RegisterChecked
 public class RegisterDTO {
     private String fullName;
     private String email;

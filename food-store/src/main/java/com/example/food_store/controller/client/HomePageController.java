@@ -3,6 +3,8 @@ package com.example.food_store.controller.client;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,8 @@ import com.example.food_store.domain.User;
 import com.example.food_store.domain.dto.RegisterDTO;
 import com.example.food_store.service.ProductService;
 import com.example.food_store.service.UserService;
+
+import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -44,7 +48,13 @@ public class HomePageController {
     }
 
     @PostMapping("/register")
-    public String handleRegister(@ModelAttribute("registerUser") RegisterDTO userDTO) {
+    public String handleRegister(@ModelAttribute("registerUser") @Valid RegisterDTO userDTO,
+            BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            return "client/auth/register";
+        }
+
         User user = this.userService.registerDTOtoUser(userDTO);
 
         String hashPassword = this.passwordEncoder.encode(userDTO.getPassword());

@@ -28,6 +28,15 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Register</h4>
                                         <form:form method="post" action="/register" modelAttribute="registerUser">
+
+                                            <c:set var="errorPassword">
+                                                <form:errors path="confirmPassword" cssClass="invalid-feedback" />
+                                            </c:set>
+
+                                            <c:set var="errorEmail">
+                                                <form:errors path="email" cssClass="invalid-feedback" />
+                                            </c:set>
+
                                             <div class="form-group">
                                                 <label for="name">Name</label>
                                                 <form:input id="name" type="text" class="form-control" name="name"
@@ -37,15 +46,20 @@
 
                                             <div class="form-group">
                                                 <label for="email">E-Mail Address</label>
-                                                <form:input id="email" type="email" class="form-control" name="email"
-                                                    required="true" path="email" />
+                                                <form:input id="email" type="email"
+                                                    class="form-control ${not empty errorEmail? 'is-invalid':''}"
+                                                    name="email" required="true" path="email" />
+                                                ${errorEmail}
 
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="password">Password</label>
-                                                <form:input id="password" type="password" class="form-control"
+                                                <form:input id="password" type="password"
+                                                    class="form-control ${not empty errorPassword? 'is-invalid':''}"
                                                     name="password" required="true" path="password" />
+
+                                                ${errorPassword}
 
                                             </div>
 
