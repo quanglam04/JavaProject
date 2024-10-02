@@ -27,10 +27,14 @@
                                 <div class="card fat">
                                     <div class="card-body">
                                         <h4 class="card-title">Login</h4>
-                                        <form method="POST" class="my-login-validation" novalidate="">
+                                        <form method="POST" action="/login" class="my-login-validation" novalidate="">
+                                            <c:if test="${param.error != null}">
+                                                <div class="my-2" style="color: red;">Invalid email or password.</div>
+                                            </c:if>
+
                                             <div class="form-group">
                                                 <label for="email">E-Mail Address</label>
-                                                <input id="email" type="email" class="form-control" name="email"
+                                                <input id="email" type="email" class="form-control" name="username"
                                                     value="" required autofocus>
                                                 <div class="invalid-feedback">
                                                     Email is invalid
@@ -48,6 +52,13 @@
                                                 <div class="invalid-feedback">
                                                     Password is required
                                                 </div>
+                                            </div>
+
+                                            <div>
+                                                <input type="hidden" name="${_csrf.parameterName}"
+                                                    value="${_csrf.token}" />
+
+
                                             </div>
 
                                             <div class="form-group">
