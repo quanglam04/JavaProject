@@ -36,12 +36,16 @@
                                             <c:set var="errorEmail">
                                                 <form:errors path="email" cssClass="invalid-feedback" />
                                             </c:set>
+                                            <c:set var="errorFullname">
+                                                <form:errors path="fullName" cssClass="invalid-feedback" />
+                                            </c:set>
 
                                             <div class="form-group">
                                                 <label for="name">Name</label>
-                                                <form:input id="name" type="text" class="form-control" name="name"
-                                                    required="true" path="fullName" />
-
+                                                <form:input id="name" type="text"
+                                                    class="form-control ${not empty errorFullname? 'is-invalid':''}"
+                                                    name="name" required="true" path="fullName" />
+                                                ${errorFullname}
                                             </div>
 
                                             <div class="form-group">
