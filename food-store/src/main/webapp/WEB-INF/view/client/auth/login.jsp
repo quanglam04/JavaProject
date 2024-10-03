@@ -32,6 +32,10 @@
                                                 <div class="my-2" style="color: red;">Invalid email or password.</div>
                                             </c:if>
 
+                                            <c:if test="${param.logout != null}">
+                                                <div class="my-2" style="color: green;">Logout success</div>
+                                            </c:if>
+
                                             <div class="form-group">
                                                 <label for="email">E-Mail Address</label>
                                                 <input id="email" type="email" class="form-control" name="username"
