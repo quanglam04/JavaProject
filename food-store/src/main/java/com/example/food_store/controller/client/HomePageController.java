@@ -14,6 +14,8 @@ import com.example.food_store.domain.dto.RegisterDTO;
 import com.example.food_store.service.ProductService;
 import com.example.food_store.service.UserService;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +39,7 @@ public class HomePageController {
     public String getHomePage(Model model) {
         List<Product> products = this.productService.fetchProducts();
         model.addAttribute("products", products);
+
         return "client/homepage/show";
     }
 
