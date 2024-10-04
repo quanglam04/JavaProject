@@ -139,15 +139,24 @@
                                                                 <a href="/product/${product.id}">${product.name}</a>
                                                                 <p>${product.shortDesc}</p>
                                                                 <div
-                                                                    class="d-flex justify-content-between flex-lg-wrap">
+                                                                    class="d-flex  justify-content-center flex-lg-wrap">
                                                                     <p class="text-dark fs-5 fw-bold mb-0">
                                                                         <fmt:formatNumber type="number"
                                                                             value="${product.price}" /> / kg
                                                                     </p>
-                                                                    <a href="#"
-                                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                            class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                        Thêm vào giỏ hàng</a>
+                                                                    <form action="/add-product-to-cart/${product.id}"
+                                                                        method="post">
+                                                                        <input type="hidden"
+                                                                            name="${_csrf.parameterName}"
+                                                                            value="${_csrf.token}" />
+
+                                                                        <button
+                                                                            class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                                                class="fa fa-shopping-bag me-2 text-primary"></i>
+                                                                            Thêm vào giỏ hàng
+                                                                        </button>
+
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </div>
