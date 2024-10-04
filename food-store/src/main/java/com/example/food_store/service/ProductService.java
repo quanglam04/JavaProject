@@ -13,7 +13,6 @@ import com.example.food_store.repository.CartDetailRepository;
 import com.example.food_store.repository.CartRepository;
 import com.example.food_store.repository.ProductRepository;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Service
@@ -48,6 +47,7 @@ public class ProductService {
     }
 
     public void handleAddProductToCart(String email, long productId, HttpSession session) {
+
         User user = this.userService.getUserByEmail(email);
         if (user != null) {
             Cart cart = this.cartRepository.findByUser(user);
@@ -82,5 +82,9 @@ public class ProductService {
             }
 
         }
+    }
+
+    public Cart fetchByUser(User user) {
+        return this.cartRepository.findByUser(user);
     }
 }
