@@ -28,16 +28,16 @@
                             </ol>
                             <div class="container mt-5 mt-5">
                                 <div class="row">
-                                    <div class="col-12 mx-auto">
-                                        <div class="d-flex justify-content-between">
-                                            <h3>User Detail with id = ${id}</h3>
-                                        </div>
+                                    <div style="text-align: center;">
+                                        <h3>Thông tin chi tiết ID = ${id}</h3>
+                                    </div>
+                                    <div class="col-6 mx-auto">
 
                                         <hr />
 
-                                        <div class="card" style="width: 60%;">
+                                        <div class="card" style="width: 100%;">
                                             <div class="card-header">
-                                                User Information
+                                                <h4>Thông tin người dùng</h4>
                                             </div>
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item">ID: ${user.id}</li>
@@ -47,7 +47,7 @@
                                                 <li class="list-group-item">Address: ${user.address}</li>
                                             </ul>
                                         </div>
-
+                                        <hr>
                                         <a href="/admin/user" class="btn btn-success mt-3">Back</a>
 
                                     </div>

@@ -130,41 +130,60 @@ public class ProductService {
         }
     }
 
-    public void handlePlaceOrder(User user, HttpSession session, String receiverName, String receiverAddress,
-            String receiverPhone) {
+    public void handlePlaceOrder(
+            User user, HttpSession session,
+            String receiverName, String receiverAddress, String receiverPhone) {
 
-        // create order
-        Order order = new Order();
-        order.setUser(user);
-        order.setReceiverName(receiverName);
-        order.setReceiverAddress(receiverAddress);
-        order.setReceiverPhone(receiverPhone);
-
-        order = this.orderRepository.save(order);
-        // create order detail
-
+        // step 1: get cart by user
         Cart cart = this.cartRepository.findByUser(user);
         if (cart != null) {
             List<CartDetail> cartDetails = cart.getCartDetails();
+
             if (cartDetails != null) {
+
+                // create order
+                Order order = new Order();
+                order.setUser(user);
+                order.setReceiverName(receiverName);
+                order.setReceiverAddress(receiverAddress);
+                order.setReceiverPhone(receiverPhone);
+                order.setStatus("PENDING");
+
+                double sum = 0;
+                for (CartDetail cd : cartDetails) {
+                    sum += cd.getPrice();
+                }
+                order.setTotalPrice(sum);
+                order = this.orderRepository.save(order);
+
+                // create orderDetail
+
                 for (CartDetail cd : cartDetails) {
                     OrderDetail orderDetail = new OrderDetail();
                     orderDetail.setOrder(order);
                     orderDetail.setProduct(cd.getProduct());
                     orderDetail.setPrice(cd.getPrice());
                     orderDetail.setQuantity(cd.getQuantity());
+
                     this.orderDetailRepository.save(orderDetail);
                 }
-                // sau khi thanh toán => cần xóa bỏ số đơn hàng hiện có trong giỏ hàng
+
+                // step 2: delete cart_detail and cart
                 for (CartDetail cd : cartDetails) {
                     this.cartDetailRepository.deleteById(cd.getId());
                 }
-                // this.cartRepository.delete(cart);
+
                 this.cartRepository.deleteById(cart.getId());
-                // sau khi xóa cần cập nhật trạng thái giỏ hàng về 0
+
+                // step 3 : update session
                 session.setAttribute("sum", 0);
             }
         }
+
+    }
+
+    public List<Order> fetchOrders() {
+        return this.orderRepository.findAll();
     }
 
 }

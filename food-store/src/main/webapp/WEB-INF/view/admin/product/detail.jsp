@@ -34,20 +34,19 @@
                                     </ol>
                                     <div class="container mt-5">
                                         <div class="row">
+                                            <div style="text-align: center;">
+                                                <h3>Product detail with id = ${id}</h3>
+                                            </div>
                                             <div class="col-12 mx-auto">
-                                                <div class="d-flex justify-content-between">
-                                                    <h3>Product detail with id = ${id}</h3>
-                                                </div>
 
                                                 <hr />
 
-                                                <div class="card" style="width: 60%">
+                                                <div class="card"
+                                                    style="width: 30%;margin-left: auto;margin-right: auto;">
                                                     <img class="card-img-top" src="/images/product/${product.image}"
                                                         alt="Card image cap">
 
-                                                    <div class="card-header">
-                                                        Product information
-                                                    </div>
+
                                                     <ul class="list-group list-group-flush">
                                                         <li class="list-group-item">ID: ${product.id}</li>
                                                         <li class="list-group-item">Name: ${product.name}</li>
@@ -60,8 +59,10 @@
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <a href="/admin/product" class="btn btn-success mt-3">Back</a>
-
+                                                <div style="margin-left: 35% ;">
+                                                    <a href="/admin/product" class="btn btn-success mt-2">Back</a>
+                                                </div>
+                                                <hr>
                                             </div>
 
                                         </div>
