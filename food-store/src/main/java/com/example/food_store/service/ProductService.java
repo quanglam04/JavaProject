@@ -186,4 +186,8 @@ public class ProductService {
         return this.orderRepository.findAll();
     }
 
+    public long countProduct() {
+        return this.productRepository.count();
+    }
+
 }

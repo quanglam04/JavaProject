@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.food_store.domain.Role;
 import com.example.food_store.domain.User;
 import com.example.food_store.domain.dto.RegisterDTO;
+import com.example.food_store.repository.OrderRepository;
 import com.example.food_store.repository.RoleRepository;
 import com.example.food_store.repository.UserRepository;
 
@@ -13,10 +14,12 @@ import com.example.food_store.repository.UserRepository;
 public class UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final OrderRepository orderRepository;
 
-    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository, OrderRepository orderRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.orderRepository = orderRepository;
     }
 
     public String handleHello() {
@@ -58,6 +61,14 @@ public class UserService {
 
     public User getUserByEmail(String email) {
         return this.userRepository.findByEmail(email);
+    }
+
+    public long countUser() {
+        return this.userRepository.count();
+    }
+
+    public long countOrder() {
+        return this.orderRepository.count();
     }
 
 }
