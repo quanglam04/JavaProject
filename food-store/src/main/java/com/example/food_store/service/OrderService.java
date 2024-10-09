@@ -7,6 +7,7 @@ import org.hibernate.internal.util.collections.ConcurrentReferenceHashMap.Option
 import org.springframework.stereotype.Service;
 import com.example.food_store.domain.Order;
 import com.example.food_store.domain.OrderDetail;
+import com.example.food_store.domain.User;
 import com.example.food_store.repository.OrderDetailRepository;
 import com.example.food_store.repository.OrderRepository;
 
@@ -26,6 +27,10 @@ public class OrderService {
 
     public Optional<Order> fetchOrderById(long id) {
         return this.orderRepository.findById(id);
+    }
+
+    public List<Order> fetchOrderByUser(User user) {
+        return this.orderRepository.findByUser(user);
     }
 
     public void deleteById(long id) {
