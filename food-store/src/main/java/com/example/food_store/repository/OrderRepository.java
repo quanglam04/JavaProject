@@ -1,6 +1,5 @@
 package com.example.food_store.repository;
 
-import org.apache.el.stream.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
