@@ -127,12 +127,12 @@
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Target:</label>
                                                     <form:select class="form-select" path="target">
-                                                        <form:option value="GAMING">Giảm cân</form:option>
-                                                        <form:option value="SINHVIEN-VANPHONG">Tăng chiều cao
+                                                        <form:option value="Giảm cân">Giảm cân</form:option>
+                                                        <form:option value="Tăng chiều cao">Tăng chiều cao
                                                         </form:option>
-                                                        <form:option value="THIET-KE-DO-HOA">Tăng cơ
+                                                        <form:option value="Tăng cơ">Tăng cơ
                                                         </form:option>
-                                                        <form:option value="MONG-NHE">Tăng cân</form:option>
+                                                        <form:option value="Tăng cân">Tăng cân</form:option>
 
                                                     </form:select>
                                                 </div>
