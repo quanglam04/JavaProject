@@ -3,6 +3,8 @@ package com.example.food_store.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.food_store.domain.Cart;
@@ -46,7 +48,11 @@ public class ProductService {
         return this.productRepository.save(prd);
     }
 
-    public List<Product> fetchProducts() {
+    public Page<Product> fetchProducts(Pageable pageable) {
+        return this.productRepository.findAll(pageable);
+    }
+
+    public List<Product> fetchAllProductsToHomePage() {
         return this.productRepository.findAll();
     }
 

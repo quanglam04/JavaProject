@@ -42,7 +42,7 @@ public class HomePageController {
 
     @RequestMapping("/")
     public String getHomePage(Model model) {
-        List<Product> products = this.productService.fetchProducts();
+        List<Product> products = this.productService.fetchAllProductsToHomePage();
         model.addAttribute("products", products);
 
         return "client/homepage/show";
