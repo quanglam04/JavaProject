@@ -87,10 +87,10 @@
                                 <div class="col-lg-8 text-end">
                                     <ul class="nav nav-pills d-inline-flex text-center mb-5">
                                         <li class="nav-item">
-                                            <a class="d-flex m-2 py-2 bg-light rounded-pill active"
-                                                data-bs-toggle="pill" href="#tab-1">
-                                                <span class="text-dark" style="width: 130px;">Tất cả</span>
+                                            <a class="d-flex m-2 py-2 bg-light rounded-pill active" href="/products">
+                                                <span class="text-dark" style="width: 130px;">Tất cả sản phẩm</span>
                                             </a>
+
                                         </li>
                                         <li class="nav-item">
                                             <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill"
@@ -139,7 +139,7 @@
                                                                 <a href="/product/${product.id}">${product.name}</a>
                                                                 <p>${product.shortDesc}</p>
                                                                 <div
-                                                                    class="d-flex  justify-content-center flex-lg-wrap">
+                                                                    class="d-flex  justify-content-center flex-lg-wrap ">
                                                                     <p class="text-dark fs-5 fw-bold mb-0">
                                                                         <fmt:formatNumber type="number"
                                                                             value="${product.price}" /> / kg
@@ -191,8 +191,7 @@
                                                                 <a href="#"
                                                                     class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                                                         class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                    Add to
-                                                                    cart</a>
+                                                                    Thêm vào giỏ hàng</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -450,8 +449,8 @@
                                         <img src="/client/img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
                                         <div class="px-4 rounded-bottom">
                                             <div class="service-content bg-primary text-center p-4 rounded">
-                                                <h5 class="text-white">Fresh Apples</h5>
-                                                <h3 class="mb-0">20% OFF</h3>
+                                                <h5 class="text-white">Táo tươi</h5>
+                                                <h3 class="mb-0">Giảm giá 20%</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -463,8 +462,8 @@
                                         <img src="/client/img/featur-2.jpg" class="img-fluid rounded-top w-100" alt="">
                                         <div class="px-4 rounded-bottom">
                                             <div class="service-content bg-light text-center p-4 rounded">
-                                                <h5 class="text-primary">Tasty Fruits</h5>
-                                                <h3 class="mb-0">Free delivery</h3>
+                                                <h5 class="text-primary">Trái cây</h5>
+                                                <h3 class="mb-0">Miễn phí vận chuyển</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -476,8 +475,8 @@
                                         <img src="/client/img/featur-3.jpg" class="img-fluid rounded-top w-100" alt="">
                                         <div class="px-4 rounded-bottom">
                                             <div class="service-content bg-secondary text-center p-4 rounded">
-                                                <h5 class="text-white">Exotic Vegitable</h5>
-                                                <h3 class="mb-0">Discount 30$</h3>
+                                                <h5 class="text-white">Rau củ</h5>
+                                                <h3 class="mb-0">Giảm giá 10%</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -500,57 +499,38 @@
                                         alt="">
                                 </div>
                                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                    style="top: 10px; right: 10px;">Vegetable</div>
+                                    style="top: 10px; right: 10px;">Thực phẩm tươi sạch</div>
                                 <div class="p-4 rounded-bottom">
-                                    <h4>Parsely</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                        incididunt
+                                    <h4>Rau mùi</h4>
+                                    <p>Mùi tây tươi xanh chất lượng cao từ vườn.
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                        <p class="text-dark fs-5 fw-bold mb-0">50,000đ/kg</p>
                                         <a href="#"
                                             class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ
+                                            hàng</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="border border-primary rounded position-relative vesitable-item">
-                                <div class="vesitable-img">
-                                    <img src="/client/img/vegetable-item-1.jpg" class="img-fluid w-100 rounded-top"
-                                        alt="">
-                                </div>
-                                <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                    style="top: 10px; right: 10px;">Vegetable</div>
-                                <div class="p-4 rounded-bottom">
-                                    <h4>Parsely</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                        incididunt
-                                    </p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                        <a href="#"
-                                            class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="border border-primary rounded position-relative vesitable-item">
                                 <div class="vesitable-img">
                                     <img src="/client/img/vegetable-item-3.png"
                                         class="img-fluid w-100 rounded-top bg-light" alt="">
                                 </div>
                                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                    style="top: 10px; right: 10px;">Vegetable</div>
+                                    style="top: 10px; right: 10px;">Hoa quả tươi</div>
                                 <div class="p-4 rounded-bottom">
-                                    <h4>Banana</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                        incididunt
+                                    <h4>Chuối</h4>
+                                    <p>Chuối vàng chín mọng giàu dinh dưỡng.
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                                        <p class="text-dark fs-5 fw-bold mb-0">13,000đ/kg</p>
                                         <a href="#"
                                             class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ
+                                            hàng</a>
                                     </div>
                                 </div>
                             </div>
@@ -560,17 +540,17 @@
                                         alt="">
                                 </div>
                                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                    style="top: 10px; right: 10px;">Vegetable</div>
+                                    style="top: 10px; right: 10px;">Thực phẩm sạch</div>
                                 <div class="p-4 rounded-bottom">
-                                    <h4>Bell Papper</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                        incididunt
+                                    <h4>Ớt chuông</h4>
+                                    <p>Ớt chuông đỏ tươi, giòn ngọt và giàu vitamin.
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                                        <p class="text-dark fs-5 fw-bold mb-0">180,000đ/kg</p>
                                         <a href="#"
                                             class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ
+                                            hàng</a>
                                     </div>
                                 </div>
                             </div>
@@ -580,80 +560,84 @@
                                         alt="">
                                 </div>
                                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                    style="top: 10px; right: 10px;">Vegetable</div>
+                                    style="top: 10px; right: 10px;">Rau củ sạch</div>
                                 <div class="p-4 rounded-bottom">
-                                    <h4>Potatoes</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                        incididunt
+                                    <h4>Khoai tây</h4>
+                                    <p>Khoai tây tươi ngon từ nông trại, giàu dinh dưỡng.
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                                        <p class="text-dark fs-5 fw-bold mb-0">15,000đ/kg</p>
                                         <a href="#"
                                             class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ
+                                            hàng</a>
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="border border-primary rounded position-relative vesitable-item">
                                 <div class="vesitable-img">
-                                    <img src="/client/img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top"
+                                    <img src="/client/img/best-product-1.jpeg" class="img-fluid w-100 rounded-top"
                                         alt="">
                                 </div>
                                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                    style="top: 10px; right: 10px;">Vegetable</div>
+                                    style="top: 10px; right: 10px;">Hoa quả tươi</div>
                                 <div class="p-4 rounded-bottom">
-                                    <h4>Parsely</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                        incididunt
+                                    <h4>Cam </h4>
+                                    <p>Cam tươi mọng nước, cung cấp vitamin C giúp tăng cường hệ miễn dịch.
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                                        <p class="text-dark fs-5 fw-bold mb-0">25,000đ/kg</p>
                                         <a href="#"
                                             class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ
+                                            hàng</a>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="border border-primary rounded position-relative vesitable-item">
                                 <div class="vesitable-img">
-                                    <img src="/client/img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top"
+                                    <img src="/client/img/best-product-6.jpeg" class="img-fluid w-100 rounded-top"
                                         alt="">
                                 </div>
                                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                    style="top: 10px; right: 10px;">Vegetable</div>
+                                    style="top: 10px; right: 10px;">Hoa quả tươi</div>
                                 <div class="p-4 rounded-bottom">
-                                    <h4>Potatoes</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                        incididunt
+                                    <h4>Táo</h4>
+                                    <p>Cam tươi mọng nước, cung cấp vitamin C giúp tăng cường hệ miễn dịch.
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                                        <p class="text-dark fs-5 fw-bold mb-0">25,000đ/kg</p>
                                         <a href="#"
                                             class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ
+                                            hàng</a>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="border border-primary rounded position-relative vesitable-item">
                                 <div class="vesitable-img">
-                                    <img src="/client/img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top"
-                                        alt="">
+                                    <img src="/client/img/duahau.png" class="img-fluid w-100 rounded-top" alt="">
                                 </div>
                                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                    style="top: 10px; right: 10px;">Vegetable</div>
+                                    style="top: 10px; right: 10px;">Hoa quả tươi</div>
                                 <div class="p-4 rounded-bottom">
-                                    <h4>Parsely</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                        incididunt
+                                    <h4>Dưa hấu </h4>
+                                    <p>Dưa hấu ngọt mát, mọng nước, lý tưởng cho những ngày hè..
                                     </p>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
+                                        <p class="text-dark fs-5 fw-bold mb-0">45,000đ/kg</p>
                                         <a href="#"
                                             class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ
+                                            hàng</a>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -720,7 +704,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -742,7 +726,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -764,7 +748,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -786,7 +770,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -808,7 +792,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -830,7 +814,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -849,7 +833,7 @@
                             </div>
                             <h4 class="mb-3">3.12 $</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                    class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -867,7 +851,7 @@
                             </div>
                             <h4 class="mb-3">3.12 $</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                    class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -885,7 +869,7 @@
                             </div>
                             <h4 class="mb-3">3.12 $</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                    class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -903,7 +887,7 @@
                             </div>
                             <h4 class="mb-3">3.12 $</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                    class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>

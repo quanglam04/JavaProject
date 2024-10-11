@@ -75,6 +75,7 @@
                                                 </tbody>
                                             </table>
                                             <!-- phân trang -->
+                                            <a href="/admin" class="btn btn-success mt-3">Back</a>
                                             <nav aria-label="Page navigation example">
                                                 <ul class="pagination justify-content-center">
 
