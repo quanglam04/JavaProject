@@ -21,6 +21,7 @@ import com.example.food_store.repository.CartDetailRepository;
 import com.example.food_store.repository.CartRepository;
 import com.example.food_store.service.ProductService;
 import com.example.food_store.service.UserService;
+import com.fasterxml.jackson.databind.ser.std.StdArraySerializers.IntArraySerializer;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -164,6 +165,7 @@ public class ItemController {
         }
 
         Pageable pageable = PageRequest.of(page - 1, 6);
+
         Page<Product> prs = this.productService.fetchProducts(pageable);
         List<Product> products = prs.getContent();
 
