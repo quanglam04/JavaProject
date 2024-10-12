@@ -9,6 +9,24 @@ public class ProductCriteriaDTO {
     private Optional<List<String>> target;
     private Optional<List<String>> price;
     private Optional<String> sort;
+    private Optional<List<String>> type;
+    private Optional<List<String>> customertarget;
+
+    public Optional<List<String>> getType() {
+        return type;
+    }
+
+    public void setType(Optional<List<String>> type) {
+        this.type = type;
+    }
+
+    public Optional<List<String>> getCustomertarget() {
+        return customertarget;
+    }
+
+    public void setCustomertarget(Optional<List<String>> customertarget) {
+        this.customertarget = customertarget;
+    }
 
     public Optional<String> getPage() {
         return page;

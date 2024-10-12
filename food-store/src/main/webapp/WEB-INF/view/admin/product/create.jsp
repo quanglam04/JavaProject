@@ -114,12 +114,46 @@
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Target:</label>
                                                     <form:select class="form-select" path="target">
-                                                        <form:option value="GAMING">Giảm cân</form:option>
-                                                        <form:option value="SINHVIEN-VANPHONG">Tăng chiều cao
+                                                        <form:option value="giam-can">Giảm cân</form:option>
+                                                        <form:option value="tang-chieu-cao">Tăng chiều cao
                                                         </form:option>
-                                                        <form:option value="THIET-KE-DO-HOA">Tăng cơ
+                                                        <form:option value="tang-co">Tăng cơ
                                                         </form:option>
-                                                        <form:option value="MONG-NHE">Tăng cân</form:option>
+                                                        <form:option value="tang-can">Tăng cân</form:option>
+
+                                                    </form:select>
+                                                </div>
+
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label class="form-label">Customers Target:</label>
+                                                    <form:select class="form-select" path="customerTarget">
+                                                        <form:option value="dan-van-phong">Dành cho dân văn phòng
+                                                        </form:option>
+                                                        <form:option value="dan-tap-the-hinh">Dành cho dân tập thể
+                                                            hình
+                                                        </form:option>
+                                                        <form:option value="be-duoi-1-tuoi">Dành cho bé dưới 1 tuổi
+                                                        </form:option>
+                                                        <form:option value="phu-nu-co-thai">Dành cho phụ nữ có thai
+                                                        </form:option>
+                                                        <form:option value="nguoi-an-kieng">Dành cho người ăn kiêng
+                                                        </form:option>
+                                                        <form:option value="tat-ca">Tất cả
+                                                        </form:option>
+
+                                                    </form:select>
+                                                </div>
+
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label class="form-label">Type:</label>
+                                                    <form:select class="form-select" path="target">
+                                                        <form:option value="rau">Rau</form:option>
+                                                        <form:option value="cu">Củ
+                                                        </form:option>
+                                                        <form:option value="thuc-pham-giau-protein">Thực phẩm giàu
+                                                            protein
+                                                        </form:option>
+                                                        <form:option value="trai-cay">Trái cây</form:option>
 
                                                     </form:select>
                                                 </div>

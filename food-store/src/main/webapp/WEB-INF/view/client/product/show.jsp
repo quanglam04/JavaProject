@@ -117,46 +117,80 @@
                                                         cao</label>
                                                 </div>
 
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="target-4"
+                                                        value="tang-can">
+                                                    <label class="form-check-label" for="target-4">Tăng cân
+                                                    </label>
+                                                </div>
+
 
                                             </div>
 
-                                            <div class="col-12" id="subjectFilter">
+                                            <div class="col-12" id="customertargetFilter">
                                                 <div class="mb-2"><b>Đối tượng</b></div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="subject-1"
-                                                        value="tap-the-hinh">
-                                                    <label class="form-check-label" for="subject-1">Dành cho người
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-1" value="tap-the-hinh">
+                                                    <label class="form-check-label" for="customertarget-1">Dành cho
+                                                        người
                                                         tập
                                                         thể hình</label>
                                                 </div>
 
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="subject-2"
-                                                        value="dan-van-phong">
-                                                    <label class="form-check-label" for="subject-2">Dành cho dân văn
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-2" value="dan-van-phong">
+                                                    <label class="form-check-label" for="customertarget-2">Dành cho dân
+                                                        văn
                                                         phòng</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="subject-3"
-                                                        value="phu-nu-co-thai">
-                                                    <label class="form-check-label" for="subject-3">Dành cho phụ nữ
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-3" value="phu-nu-co-thai">
+                                                    <label class="form-check-label" for="customertarget-3">Dành cho
+                                                        phụ nữ
                                                         có thai</label>
                                                 </div>
 
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="subject-4"
-                                                        value="danh-cho-be-duoi-1-tuoi">
-                                                    <label class="form-check-label" for="subject-4">Dành cho bé dưới
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-4" value="be-duoi-1-tuoi">
+                                                    <label class="form-check-label" for="customertarget-4">Dành cho bé
+                                                        dưới
                                                         1 tuổi</label>
                                                 </div>
+
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-5" value="nguoi-an-kieng">
+                                                    <label class="form-check-label" for="customertarget-5">Dành cho
+                                                        người ăn
+                                                        kiêng</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-6" value="tat-ca">
+                                                    <label class="form-check-label" for="customertarget-6">Tất
+                                                        cả</label>
+                                                </div>
+
+
+
                                             </div>
 
                                             <div class="col-12" id="typeFilter">
                                                 <div class="mb-2"><b>Loại</b></div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="type-1"
-                                                        value="rau-cu">
-                                                    <label class="form-check-label" for="type-1">Rau,củ</label>
+                                                        value="rau">
+                                                    <label class="form-check-label" for="type-1">Rau</label>
+                                                </div>
+
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="type-4"
+                                                        value="cu">
+                                                    <label class="form-check-label" for="type-4">Củ</label>
                                                 </div>
 
                                                 <div class="form-check form-check-inline">
@@ -276,7 +310,7 @@
                                                                     <button
                                                                         class="mx-auto btn border border-secondary rounded-pill px-3 text-primary"><i
                                                                             class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                        Add to cart
+                                                                        Thêm vào giỏ hàng
                                                                     </button>
                                                                 </form>
                                                             </div>

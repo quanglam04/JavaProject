@@ -228,7 +228,8 @@
         let factoryArr = [];
         let targetArr = [];
         let priceArr = [];
-        let subjectArr = [];
+        let customertargetArr = [];
+        let typeArr = [];
         //factory filter
         $("#factoryFilter .form-check-input:checked").each(function () {
             factoryArr.push($(this).val());
@@ -239,8 +240,12 @@
             targetArr.push($(this).val());
         });
 
-        $("#subjectFilter .form-check-input:checked").each(function () {
-            subjectArr.push($(this).val());
+        $("#typeFilter .form-check-input:checked").each(function () {
+            typeArr.push($(this).val());
+        });
+
+        $("#customertargetFilter .form-check-input:checked").each(function () {
+            customertargetArr.push($(this).val());
         });
 
         //price filter
@@ -260,8 +265,9 @@
 
         searchParams.delete('factory')
         searchParams.delete('target')
-        searchParams.delete('subject')
+        searchParams.delete('customertarget')
         searchParams.delete('price')
+        searchParams.delete('type')
 
         if (factoryArr.length > 0) {
             searchParams.set('factory', factoryArr.join(','));
@@ -269,11 +275,14 @@
         if (targetArr.length > 0) {
             searchParams.set('target', targetArr.join(','));
         }
-        if (subjectArr.length > 0) {
-            searchParams.set('subject', subjectArr.join(','));
+        if (customertargetArr.length > 0) {
+            searchParams.set('customertarget', customertargetArr.join(','));
         }
         if (priceArr.length > 0) {
             searchParams.set('price', priceArr.join(','));
+        }
+        if (typeArr.length > 0) {
+            searchParams.set('type', typeArr.join(','));
         }
 
         // Update the URL and reload the page
@@ -300,10 +309,17 @@
         });
     }
 
-    if (params.has('subject')) {
-        const targets = params.get('subject').split(',');
-        targets.forEach(subject => {
-            $(`#subjectFilter .form-check-input[value="${subject}"]`).prop('checked', true);
+    if (params.has('customertarget')) {
+        const targets = params.get('customertarget').split(',');
+        targets.forEach(customertarget => {
+            $(`#customertargetFilter .form-check-input[value="${customertarget}"]`).prop('checked', true);
+        });
+    }
+
+    if (params.has('type')) {
+        const targets = params.get('type').split(',');
+        targets.forEach(type => {
+            $(`#typeFilter .form-check-input[value="${type}"]`).prop('checked', true);
         });
     }
 

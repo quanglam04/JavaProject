@@ -22,7 +22,6 @@ import com.example.food_store.service.UploadService;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -82,7 +81,6 @@ public class ProductController {
         String img = this.uploadService.handleSaveUploadFile(file, "product");
         prd.setImage(img);
         this.productService.createProduct(prd);
-        System.out.println(prd.toString());
         return "redirect:/admin/product";
 
     }

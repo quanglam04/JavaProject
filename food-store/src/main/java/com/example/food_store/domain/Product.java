@@ -41,8 +41,27 @@ public class Product {
     @Min(value = 1, message = "Số lượng cần lớn hơn hoặc bằng 1")
     private long quantity;
     private long sold;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCustomerTarget() {
+        return customerTarget;
+    }
+
+    public void setCustomerTarget(String customerTarget) {
+        this.customerTarget = customerTarget;
+    }
+
     private String factory;
     private String target;
+    private String type;
+    private String customerTarget;
 
     public long getId() {
         return id;

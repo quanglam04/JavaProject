@@ -20,14 +20,19 @@ public class ProductSpecification {
         return (root, query, criteriaBuilder) -> criteriaBuilder.le(root.get(Product_.PRICE), price);
     }
 
-    // case3
-    public static Specification<Product> matchFactory(String factory) {
-        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get(Product_.FACTORY), factory);
-    }
-
     // case4
     public static Specification<Product> matchListFactory(List<String> factory) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.in(root.get(Product_.FACTORY)).value(factory);
+    }
+
+    public static Specification<Product> matchListcustomerTarget(List<String> customerTarget) {
+        return (root, query, criteriaBuilder) -> criteriaBuilder.in(root.get(Product_.CUSTOMER_TARGET))
+                .value(customerTarget);
+    }
+
+    // case4
+    public static Specification<Product> matchListType(List<String> type) {
+        return (root, query, criteriaBuilder) -> criteriaBuilder.in(root.get(Product_.TYPE)).value(type);
     }
 
     // case4

@@ -167,15 +167,15 @@ public class ItemController {
             // page = 1
             // TODO: handle exception
         }
-        Pageable pageable = PageRequest.of(page - 1, 2);
+        Pageable pageable = PageRequest.of(page - 1, 100);
         if (productCriteriaDTO.getSort() != null && productCriteriaDTO.getSort().isPresent()) {
             String sort = productCriteriaDTO.getSort().get();
             if (sort.equals("gia-tang-dan")) {
-                pageable = PageRequest.of(page - 1, 2, Sort.by(Product_.PRICE).ascending());
+                pageable = PageRequest.of(page - 1, 100, Sort.by(Product_.PRICE).ascending());
             } else if (sort.equals("gia-giam-dan")) {
-                pageable = PageRequest.of(page - 1, 2, Sort.by(Product_.PRICE).descending());
+                pageable = PageRequest.of(page - 1, 100, Sort.by(Product_.PRICE).descending());
             } else {
-                pageable = PageRequest.of(page - 1, 2);
+                pageable = PageRequest.of(page - 1, 100);
             }
         }
 

@@ -58,7 +58,9 @@ public class ProductService {
     public Page<Product> fetchProductsWithSpec(Pageable page, ProductCriteriaDTO productCriteriaDTO) {
         if (productCriteriaDTO.getTarget() == null
                 && productCriteriaDTO.getFactory() == null
-                && productCriteriaDTO.getPrice() == null) {
+                && productCriteriaDTO.getPrice() == null
+                && productCriteriaDTO.getType() == null
+                && productCriteriaDTO.getCustomertarget() == null) {
             return this.productRepository.findAll(page);
         }
 
@@ -72,6 +74,18 @@ public class ProductService {
         if (productCriteriaDTO.getFactory() != null && productCriteriaDTO.getFactory().isPresent()) {
             Specification<Product> currentSpecs = ProductSpecification
                     .matchListFactory(productCriteriaDTO.getFactory().get());
+            combinedSpec = combinedSpec.and(currentSpecs);
+        }
+
+        if (productCriteriaDTO.getType() != null && productCriteriaDTO.getType().isPresent()) {
+            Specification<Product> currentSpecs = ProductSpecification
+                    .matchListType(productCriteriaDTO.getType().get());
+            combinedSpec = combinedSpec.and(currentSpecs);
+        }
+
+        if (productCriteriaDTO.getCustomertarget() != null && productCriteriaDTO.getCustomertarget().isPresent()) {
+            Specification<Product> currentSpecs = ProductSpecification
+                    .matchListcustomerTarget(productCriteriaDTO.getCustomertarget().get());
             combinedSpec = combinedSpec.and(currentSpecs);
         }
 
