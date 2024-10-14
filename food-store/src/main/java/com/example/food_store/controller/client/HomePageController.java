@@ -15,6 +15,7 @@ import com.example.food_store.domain.dto.RegisterDTO;
 import com.example.food_store.service.OrderService;
 import com.example.food_store.service.ProductService;
 import com.example.food_store.service.UserService;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -98,6 +99,15 @@ public class HomePageController {
 
         model.addAttribute("orders", orders);
         return "client/cart/order-history";
+    }
+
+    @GetMapping("/view-profile")
+    public String getProfileView(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession(false);
+        Long id = (Long) session.getAttribute("id");
+        User user = this.userService.getUserById(id);
+        model.addAttribute("user", user);
+        return "client/homepage/viewProfile";
     }
 
 }

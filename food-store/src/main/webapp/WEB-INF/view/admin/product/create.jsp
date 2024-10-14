@@ -154,6 +154,7 @@
                                                             protein
                                                         </form:option>
                                                         <form:option value="trai-cay">Trái cây</form:option>
+                                                        <form:option value="thuc-uong">Thức uống</form:option>
 
                                                     </form:select>
                                                 </div>

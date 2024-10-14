@@ -34,6 +34,13 @@
 
                 <!-- Template Stylesheet -->
                 <link href="/client/css/style.css" rel="stylesheet">
+
+                <meta name="_csrf" content="${_csrf.token}" />
+                <!-- default header name is X-CSRF-TOKEN -->
+                <meta name="_csrf_header" content="${_csrf.headerName}" />
+
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css"
+                    rel="stylesheet">
             </head>
 
             <body>
@@ -73,16 +80,7 @@
                 <!-- Modal Search End -->
 
 
-                <!-- Single Page Header start -->
-                <div class="container-fluid page-header py-5">
-                    <h1 class="text-center text-white display-6">Shop Detail</h1>
-                    <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item active text-white">Shop Detail</li>
-                    </ol>
-                </div>
-                <!-- Single Page Header End -->
+
 
 
                 <!-- Single Product Start -->
@@ -134,19 +132,18 @@
                                             </div>
                                         </div>
 
-                                        <form action="/add-product-from-view-detail" method="post" modelAttribute="prd">
-                                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                                            <input class="form-control d-none" type="text" value="${prd.id}"
-                                                name="id" />
+                                        <!-- <form action="/add-product-from-view-detail" method="post" modelAttribute="prd"> -->
+                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                                        <input class="form-control d-none" type="text" value="${prd.id}" name="id" />
 
-                                            <input class="form-control d-none" type="text" name="quantity"
-                                                id="cartDetails0.quantity" />
-                                            <button
-                                                class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                Thêm vào giỏ hàng
-                                            </button>
-                                        </form>
+                                        <input class="form-control d-none" type="text" name="quantity"
+                                            id="cartDetails0.quantity" />
+                                        <button
+                                            class="btnAddToCartDetail btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
+                                                class="fa fa-shopping-bag me-2 text-primary"></i>
+                                            Thêm vào giỏ hàng
+                                        </button>
+                                        <!-- </form> -->
 
 
                                     </div>
@@ -288,325 +285,162 @@
                                                     class="fa fa-search"></i></span>
                                         </div>
                                         <div class="mb-4">
-                                            <h4>Categories</h4>
+                                            <h4>Thể loại</h4>
                                             <ul class="list-unstyled fruite-categorie">
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Apples</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Rau</a>
                                                         <span>(3)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Củ</a>
                                                         <span>(5)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Trái cây</a>
                                                         <span>(2)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Thực phẩm
+                                                            giàu protein</a>
                                                         <span>(8)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Thức uống</a>
                                                         <span>(5)</span>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <h4 class="mb-4">Featured products</h4>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded" style="width: 100px; height: 100px;">
-                                                <img src="/client/img/featur-1.jpg" class="img-fluid rounded"
-                                                    alt="Image">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded" style="width: 100px; height: 100px;">
-                                                <img src="/client/img/featur-2.jpg" class="img-fluid rounded" alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded" style="width: 100px; height: 100px;">
-                                                <img src="/client/img/featur-3.jpg" class="img-fluid rounded" alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                                <img src="/client/img/vegetable-item-4.jpg" class="img-fluid rounded"
-                                                    alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                                <img src="/client/img/vegetable-item-5.jpg" class="img-fluid rounded"
-                                                    alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                                <img src="/client/img/vegetable-item-6.jpg" class="img-fluid rounded"
-                                                    alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-center my-4">
-                                            <a href="#"
-                                                class="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100">Vew
-                                                More</a>
-                                        </div>
-                                    </div>
+
 
                                 </div>
                             </div>
                         </div>
                         <h1 class="fw-bold mb-0">Sản phẩm liên quan</h1>
-                        <div class="vesitable">
-                            <div class="owl-carousel vegetable-carousel justify-content-center">
-                                <div class="border border-primary rounded position-relative vesitable-item">
-                                    <div class="vesitable-img">
-                                        <img src="/client/img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top"
-                                            alt="">
-                                    </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
-                                    <div class="p-4 pb-0 rounded-bottom">
-                                        <h4>Parsely</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                            incididunt</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$4.99 / kg</p>
-                                            <a href="#"
-                                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+
+                        <div class="container-fluid vesitable py-5">
+                            <div class="container py-5">
+                                <h1 class="mb-0">Rau hữu cơ tươi</h1>
+                                <div class="owl-carousel vegetable-carousel justify-content-center">
+                                    <div class="border border-primary rounded position-relative vesitable-item">
+                                        <div class="vesitable-img">
+                                            <img src="/client/img/vegetable-item-6.jpg"
+                                                class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                                            style="top: 10px; right: 10px;">Thực phẩm tươi sạch</div>
+                                        <div class="p-4 rounded-bottom">
+                                            <h4>Rau mùi</h4>
+                                            <p>Mùi tây tươi xanh chất lượng cao từ vườn.
+                                            </p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">50,000đ/kg</p>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="border border-primary rounded position-relative vesitable-item">
-                                    <div class="vesitable-img">
-                                        <img src="/client/img/vegetable-item-1.jpg" class="img-fluid w-100 rounded-top"
-                                            alt="">
-                                    </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
-                                    <div class="p-4 pb-0 rounded-bottom">
-                                        <h4>Parsely</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                            incididunt</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$4.99 / kg</p>
-                                            <a href="#"
-                                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+
+                                    <div class="border border-primary rounded position-relative vesitable-item">
+                                        <div class="vesitable-img">
+                                            <img src="/client/img/vegetable-item-3.png"
+                                                class="img-fluid w-100 rounded-top bg-light" alt="">
+                                        </div>
+                                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                                            style="top: 10px; right: 10px;">Hoa quả tươi</div>
+                                        <div class="p-4 rounded-bottom">
+                                            <h4>Chuối</h4>
+                                            <p>Chuối vàng chín mọng giàu dinh dưỡng.
+                                            </p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">13,000đ/kg</p>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="border border-primary rounded position-relative vesitable-item">
-                                    <div class="vesitable-img">
-                                        <img src="/client/img/vegetable-item-3.png"
-                                            class="img-fluid w-100 rounded-top bg-light" alt="">
-                                    </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
-                                    <div class="p-4 pb-0 rounded-bottom">
-                                        <h4>Banana</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                            incididunt</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                                            <a href="#"
-                                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                    <div class="border border-primary rounded position-relative vesitable-item">
+                                        <div class="vesitable-img">
+                                            <img src="/client/img/vegetable-item-4.jpg"
+                                                class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                                            style="top: 10px; right: 10px;">Thực phẩm sạch</div>
+                                        <div class="p-4 rounded-bottom">
+                                            <h4>Ớt chuông</h4>
+                                            <p>Ớt chuông đỏ tươi, giòn ngọt và giàu vitamin.
+                                            </p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">180,000đ/kg</p>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="border border-primary rounded position-relative vesitable-item">
-                                    <div class="vesitable-img">
-                                        <img src="/client/img/vegetable-item-4.jpg" class="img-fluid w-100 rounded-top"
-                                            alt="">
-                                    </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
-                                    <div class="p-4 pb-0 rounded-bottom">
-                                        <h4>Bell Papper</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                            incididunt</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                                            <a href="#"
-                                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                    <div class="border border-primary rounded position-relative vesitable-item">
+                                        <div class="vesitable-img">
+                                            <img src="/client/img/vegetable-item-5.jpg"
+                                                class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                                            style="top: 10px; right: 10px;">Rau củ sạch</div>
+                                        <div class="p-4 rounded-bottom">
+                                            <h4>Khoai tây</h4>
+                                            <p>Khoai tây tươi ngon từ nông trại, giàu dinh dưỡng.
+                                            </p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">15,000đ/kg</p>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="border border-primary rounded position-relative vesitable-item">
-                                    <div class="vesitable-img">
-                                        <img src="/client/img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top"
-                                            alt="">
-                                    </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
-                                    <div class="p-4 pb-0 rounded-bottom">
-                                        <h4>Potatoes</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                            incididunt</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                                            <a href="#"
-                                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+
+
+                                    <div class="border border-primary rounded position-relative vesitable-item">
+                                        <div class="vesitable-img">
+                                            <img src="/client/img/best-product-1.jpeg"
+                                                class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                                            style="top: 10px; right: 10px;">Hoa quả tươi</div>
+                                        <div class="p-4 rounded-bottom">
+                                            <h4>Cam </h4>
+                                            <p>Cam tươi mọng nước, cung cấp vitamin C giúp tăng cường hệ miễn dịch.
+                                            </p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">25,000đ/kg</p>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="border border-primary rounded position-relative vesitable-item">
-                                    <div class="vesitable-img">
-                                        <img src="/client/img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top"
-                                            alt="">
-                                    </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
-                                    <div class="p-4 pb-0 rounded-bottom">
-                                        <h4>Parsely</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                            incididunt</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                                            <a href="#"
-                                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+
+                                    <div class="border border-primary rounded position-relative vesitable-item">
+                                        <div class="vesitable-img">
+                                            <img src="/client/img/best-product-6.jpeg"
+                                                class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                                            style="top: 10px; right: 10px;">Hoa quả tươi</div>
+                                        <div class="p-4 rounded-bottom">
+                                            <h4>Táo</h4>
+                                            <p>Cam tươi mọng nước, cung cấp vitamin C giúp tăng cường hệ miễn dịch.
+                                            </p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">25,000đ/kg</p>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="border border-primary rounded position-relative vesitable-item">
-                                    <div class="vesitable-img">
-                                        <img src="/client/img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top"
-                                            alt="">
-                                    </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
-                                    <div class="p-4 pb-0 rounded-bottom">
-                                        <h4>Potatoes</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                            incididunt</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                                            <a href="#"
-                                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="border border-primary rounded position-relative vesitable-item">
-                                    <div class="vesitable-img">
-                                        <img src="/client/img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top"
-                                            alt="">
-                                    </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
-                                    <div class="p-4 pb-0 rounded-bottom">
-                                        <h4>Parsely</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
-                                            incididunt</p>
-                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                                            <a href="#"
-                                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                        </div>
-                                    </div>
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -636,6 +470,9 @@
 
                 <!-- Template Javascript -->
                 <script src="/client/js/main.js"></script>
+
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
             </body>
 
             </html>

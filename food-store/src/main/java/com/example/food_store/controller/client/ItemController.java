@@ -60,7 +60,7 @@ public class ItemController {
         long productId = id;
         String email = (String) session.getAttribute("email");
         this.productService.handleAddProductToCart(email, productId, session, 1);
-        return "redirect:/";
+        return "redirect:/products";
     }
 
     @GetMapping("/cart")
@@ -142,7 +142,7 @@ public class ItemController {
     @PostMapping("/add-product-from-view-detail")
     public String handleAddProductFromViewDetail(
             @RequestParam("id") long id,
-            @RequestParam("quantity") long quantity,
+            @RequestParam(value = "quantity", defaultValue = "1") long quantity,
             HttpServletRequest request) {
         HttpSession session = request.getSession(false);
 
@@ -167,15 +167,15 @@ public class ItemController {
             // page = 1
             // TODO: handle exception
         }
-        Pageable pageable = PageRequest.of(page - 1, 100);
+        Pageable pageable = PageRequest.of(page - 1, 5);
         if (productCriteriaDTO.getSort() != null && productCriteriaDTO.getSort().isPresent()) {
             String sort = productCriteriaDTO.getSort().get();
             if (sort.equals("gia-tang-dan")) {
-                pageable = PageRequest.of(page - 1, 100, Sort.by(Product_.PRICE).ascending());
+                pageable = PageRequest.of(page - 1, 5, Sort.by(Product_.PRICE).ascending());
             } else if (sort.equals("gia-giam-dan")) {
-                pageable = PageRequest.of(page - 1, 100, Sort.by(Product_.PRICE).descending());
+                pageable = PageRequest.of(page - 1, 5, Sort.by(Product_.PRICE).descending());
             } else {
-                pageable = PageRequest.of(page - 1, 100);
+                pageable = PageRequest.of(page - 1, 5);
             }
         }
 
