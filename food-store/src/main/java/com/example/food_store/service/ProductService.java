@@ -47,6 +47,10 @@ public class ProductService {
         this.orderRepository = orderRepository;
     }
 
+    public long getQuantitybyType(String type) {
+        return this.productRepository.countByType(type);
+    }
+
     public Product createProduct(Product prd) {
         return this.productRepository.save(prd);
     }

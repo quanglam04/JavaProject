@@ -279,7 +279,7 @@
                                 <div class="row g-4 fruite">
                                     <div class="col-lg-12">
                                         <div class="input-group w-100 mx-auto d-flex mb-4">
-                                            <input type="search" class="form-control p-3" placeholder="keywords"
+                                            <input type="search" class="form-control p-3" placeholder="Từ khóa"
                                                 aria-describedby="search-icon-1">
                                             <span id="search-icon-1" class="input-group-text p-3"><i
                                                     class="fa fa-search"></i></span>
@@ -289,33 +289,34 @@
                                             <ul class="list-unstyled fruite-categorie">
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Rau</a>
-                                                        <span>(3)</span>
+                                                        <a href="#"><i class="fas fa-seedling me-2"></i>Rau</a>
+                                                        <span>(${number_1})</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Củ</a>
-                                                        <span>(5)</span>
+                                                        <a href="#"><i class="fas fa-carrot me-2"></i>Củ</a>
+                                                        <span>(${number_2})</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
                                                         <a href="#"><i class="fas fa-apple-alt me-2"></i>Trái cây</a>
-                                                        <span>(2)</span>
+                                                        <span>(${number_3})</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Thực phẩm
+                                                        <a href="#"><i class="fas fa-egg me-2"></i>Thực phẩm
                                                             giàu protein</a>
-                                                        <span>(8)</span>
+                                                        <span>(${number_4})</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Thức uống</a>
-                                                        <span>(5)</span>
+                                                        <a href="#"><i class="fas fa-wine-bottle me-2"></i>Thức
+                                                            uống</a>
+                                                        <span>(${number_5})</span>
                                                     </div>
                                                 </li>
                                             </ul>

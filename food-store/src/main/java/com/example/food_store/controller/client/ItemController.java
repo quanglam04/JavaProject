@@ -50,7 +50,19 @@ public class ItemController {
     @GetMapping("/product/{id}")
     public String getProductPage(Model model, @PathVariable long id) {
         Product prd = this.productService.fetchProductById(id).get();
+        long number_1 = this.productService.getQuantitybyType("rau");
+        long number_2 = this.productService.getQuantitybyType("cu");
+        long number_3 = this.productService.getQuantitybyType("trai-cay");
+        long number_4 = this.productService.getQuantitybyType("thuc-pham-giau-protein");
+        long number_5 = this.productService.getQuantitybyType("thuc-uong");
+
+        model.addAttribute("number_1", number_1);
+        model.addAttribute("number_2", number_2);
+        model.addAttribute("number_3", number_3);
+        model.addAttribute("number_4", number_4);
+        model.addAttribute("number_5", number_5);
         model.addAttribute("prd", prd);
+
         return "client/product/detail";
     }
 
