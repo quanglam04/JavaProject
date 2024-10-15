@@ -59,6 +59,10 @@ public class ProductService {
         return this.productRepository.findAll(pageable);
     }
 
+    public List<Product> fetchProductByType(String type) {
+        return this.productRepository.findByType(type);
+    }
+
     public Page<Product> fetchProductsWithSpec(Pageable page, ProductCriteriaDTO productCriteriaDTO) {
         if (productCriteriaDTO.getTarget() == null
                 && productCriteriaDTO.getFactory() == null

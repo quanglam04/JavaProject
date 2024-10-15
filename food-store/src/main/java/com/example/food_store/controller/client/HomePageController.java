@@ -44,7 +44,18 @@ public class HomePageController {
     @RequestMapping("/")
     public String getHomePage(Model model) {
         List<Product> products = this.productService.fetchAllProductsToHomePage();
+        List<Product> productsTypeRauCu = this.productService.fetchProductByType("rau");
+        productsTypeRauCu.addAll(this.productService.fetchProductByType("cu"));
+
+        List<Product> productsTypeTraiCay = this.productService.fetchProductByType("trai-cay");
+        List<Product> productsTypeThit = this.productService.fetchProductByType("thuc-pham-giau-protein");
+        List<Product> productsTypeThucUong = this.productService.fetchProductByType("thuc-uong");
+
         model.addAttribute("products", products);
+        model.addAttribute("productsTypeThucUongs", productsTypeThucUong);
+        model.addAttribute("productsTypeRauCus", productsTypeRauCu);
+        model.addAttribute("productsTypeTraiCays", productsTypeTraiCay);
+        model.addAttribute("productsTypeThits", productsTypeThit);
 
         return "client/homepage/show";
     }

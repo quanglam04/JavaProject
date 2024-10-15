@@ -23,6 +23,7 @@ import com.example.food_store.domain.dto.ProductCriteriaDTO;
 import com.example.food_store.repository.CartDetailRepository;
 import com.example.food_store.repository.CartRepository;
 import com.example.food_store.service.ProductService;
+import com.example.food_store.service.SendEmail;
 import com.example.food_store.service.UserService;
 import com.fasterxml.jackson.databind.ser.std.StdArraySerializers.IntArraySerializer;
 
@@ -38,13 +39,16 @@ public class ItemController {
     private final UserService userService;
     private final CartDetailRepository cartDetailRepository;
     private final CartRepository cartRepository;
+    private final SendEmail sendEmail;
 
     public ItemController(ProductService productService, UserService userService,
-            CartDetailRepository cartDetailRepository, CartRepository cartRepository) {
+            CartDetailRepository cartDetailRepository, CartRepository cartRepository,
+            SendEmail sendEmail) {
         this.productService = productService;
         this.userService = userService;
         this.cartDetailRepository = cartDetailRepository;
         this.cartRepository = cartRepository;
+        this.sendEmail = sendEmail;
     }
 
     @GetMapping("/product/{id}")
@@ -147,7 +151,14 @@ public class ItemController {
     }
 
     @GetMapping("/afterOrder")
-    public String getAfterOrderPage() {
+    public String getAfterOrderPage(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        Long id = (long) session.getAttribute("id");
+        User user = this.userService.getUserById(id);
+        String email = user.getEmail();
+
+        sendEmail.sendEmail(email, "Xác nhận đơn hàng",
+                "FoodStore chân thành cảm ơn bạn vì đã sử dụng sản phẩm của chúng tôi!");
         return "client/cart/afterOrder";
     }
 
