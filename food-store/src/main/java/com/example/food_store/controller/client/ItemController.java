@@ -1,6 +1,7 @@
 package com.example.food_store.controller.client;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Optional;
 
@@ -154,8 +155,15 @@ public class ItemController {
     public String getAfterOrderPage(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         Long id = (long) session.getAttribute("id");
+
         User user = this.userService.getUserById(id);
         String email = user.getEmail();
+
+        Enumeration<String> attributes = request.getSession().getAttributeNames();
+        while (attributes.hasMoreElements()) {
+            String attribute = (String) attributes.nextElement();
+            System.out.println(">>>>>>>>>" + attribute + " : " + request.getSession().getAttribute(attribute));
+        }
 
         sendEmail.sendEmail(email, "Xác nhận đơn hàng",
                 "FoodStore chân thành cảm ơn bạn vì đã sử dụng sản phẩm của chúng tôi!");

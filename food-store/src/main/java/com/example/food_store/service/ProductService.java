@@ -256,8 +256,10 @@ public class ProductService {
 
                 double sum = 0;
                 for (CartDetail cd : cartDetails) {
-                    sum += cd.getPrice();
+                    sum += cd.getPrice() * cd.getQuantity();
+                    System.out.println(cd.getPrice());
                 }
+
                 order.setTotalPrice(sum);
                 order = this.orderRepository.save(order);
 
