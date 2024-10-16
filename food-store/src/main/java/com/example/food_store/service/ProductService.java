@@ -1,5 +1,6 @@
 package com.example.food_store.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -273,4 +274,8 @@ public class ProductService {
         return this.productRepository.count();
     }
 
+    public List<Product> findProductByName(String text) {
+        List<Product> products = productRepository.findAllByNameContaining(text);
+        return products;
+    }
 }

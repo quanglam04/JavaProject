@@ -2,23 +2,19 @@ package com.example.food_store.controller.client;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
+import com.example.food_store.domain.*;
+import com.example.food_store.domain.dto.ProductSearchRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
-import com.example.food_store.domain.Cart;
-import com.example.food_store.domain.CartDetail;
-import com.example.food_store.domain.Product;
-import com.example.food_store.domain.Product_;
-import com.example.food_store.domain.User;
 import com.example.food_store.domain.dto.ProductCriteriaDTO;
 import com.example.food_store.repository.CartDetailRepository;
 import com.example.food_store.repository.CartRepository;
@@ -29,8 +25,7 @@ import com.fasterxml.jackson.databind.ser.std.StdArraySerializers.IntArraySerial
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ItemController {
@@ -55,12 +50,12 @@ public class ItemController {
     }
 
     @PostMapping("/add-product-to-cart/{id}")
-    public String addProductToCart(@PathVariable long id, HttpServletRequest request) {
+    public void addProductToCart(@PathVariable long id, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         long productId = id;
         String email = (String) session.getAttribute("email");
         this.productService.handleAddProductToCart(email, productId, session, 1);
-        return "redirect:/";
+        return;
     }
 
     @GetMapping("/cart")
@@ -194,4 +189,11 @@ public class ItemController {
         return "client/product/show";
     }
 
+    @GetMapping("/item/search")
+    public ModelAndView search(@RequestParam String text) {
+        ModelAndView mav = new ModelAndView("client/product/search");
+        List<Product> productList = productService.findProductByName(text);
+        mav.addObject("productList", productList);
+        return mav;
+    }
 }

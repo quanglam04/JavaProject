@@ -3,6 +3,7 @@ package com.example.food_store.controller.admin;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.food_store.domain.dto.ProductSearchRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -10,9 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.food_store.domain.Product;
 
@@ -21,10 +20,8 @@ import com.example.food_store.service.UploadService;
 
 import jakarta.validation.Valid;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ProductController {
@@ -144,5 +141,7 @@ public class ProductController {
         return "redirect:/admin/product";
 
     }
+
+
 
 }
