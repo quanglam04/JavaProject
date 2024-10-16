@@ -40,7 +40,11 @@
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css"
                     rel="stylesheet">
 
-
+                <style>
+                    .hidden {
+                        display: none;
+                    }
+                </style>
             </head>
 
             <body>
@@ -134,44 +138,43 @@
                                     <div class="row g-4">
                                         <div class="col-lg-12">
                                             <div class="row g-4">
-
-                                                <c:forEach var="product" items="${products}">
-                                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <!-- Hiển thị sản phẩm bằng c:forEach -->
+                                                <c:forEach var="product" items="${products}" varStatus="status">
+                                                    <!-- Thêm class "product-item" và "hidden" cho các sản phẩm cần ẩn -->
+                                                    <div
+                                                        class="col-md-6 col-lg-4 col-xl-3 product-item ${status.index >= 8 ? 'hidden' : ''}">
                                                         <div class="rounded position-relative fruite-item">
                                                             <div class="fruite-img">
                                                                 <img src="/images/product/${product.image}"
                                                                     class="img-fluid w-100 rounded-top" alt="">
                                                             </div>
-
                                                             <div
                                                                 class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                                 <a href="/product/${product.id}">${product.name}</a>
                                                                 <p>${product.shortDesc}</p>
-                                                                <div
-                                                                    class="d-flex  justify-content-center flex-lg-wrap ">
+                                                                <div class="d-flex justify-content-center flex-lg-wrap">
                                                                     <p class="text-dark fs-5 fw-bold mb-0">
                                                                         <fmt:formatNumber type="number"
                                                                             value="${product.price}" /> / kg
                                                                     </p>
-                                                                    <!-- <form action="/add-product-to-cart/${product.id}"
-                                                                        method="post">
-                                                                        <input type="hidden"
-                                                                            name="${_csrf.parameterName}"
-                                                                            value="${_csrf.token}" /> -->
-
                                                                     <button data-product-id="${product.id}"
-                                                                        class="btnAddToCartHomepage btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                                        class="btnAddToCartHomepage btn border border-secondary rounded-pill px-3 text-primary">
+                                                                        <i
                                                                             class="fa fa-shopping-bag me-2 text-primary"></i>
                                                                         Thêm vào giỏ hàng
                                                                     </button>
-
-                                                                    <!-- </form> -->
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </c:forEach>
-
+                                            </div>
+                                            <!-- Nút View More -->
+                                            <div class="row">
+                                                <div class="col-12 text-center">
+                                                    <button id="viewMoreBtn" class="btn btn-primary mt-4"> Xem thêm
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
