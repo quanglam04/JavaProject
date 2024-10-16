@@ -50,12 +50,14 @@ public class HomePageController {
         List<Product> productsTypeTraiCay = this.productService.fetchProductByType("trai-cay");
         List<Product> productsTypeThit = this.productService.fetchProductByType("thuc-pham-giau-protein");
         List<Product> productsTypeThucUong = this.productService.fetchProductByType("thuc-uong");
+        List<Product> productsTypeTinhBot = this.productService.fetchProductByType("thuc-pham-chua-tinh-bot");
 
         model.addAttribute("products", products);
         model.addAttribute("productsTypeThucUongs", productsTypeThucUong);
         model.addAttribute("productsTypeRauCus", productsTypeRauCu);
         model.addAttribute("productsTypeTraiCays", productsTypeTraiCay);
         model.addAttribute("productsTypeThits", productsTypeThit);
+        model.addAttribute("productsTypeTinhBots", productsTypeTinhBot);
 
         return "client/homepage/show";
     }

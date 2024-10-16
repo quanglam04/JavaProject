@@ -81,6 +81,7 @@ public class ProductController {
         String img = this.uploadService.handleSaveUploadFile(file, "product");
         prd.setImage(img);
         this.productService.createProduct(prd);
+        System.out.println(prd);
         return "redirect:/admin/product";
 
     }
@@ -128,12 +129,13 @@ public class ProductController {
                 currentProduct.setImage(img);
             }
             currentProduct.setDetailDesc(prd.getDetailDesc());
-            currentProduct.setFactory(prd.getFactory());
             currentProduct.setName(prd.getName());
             currentProduct.setPrice(prd.getPrice());
             currentProduct.setQuantity(prd.getQuantity());
+            currentProduct.setType(prd.getType());
+            currentProduct.setCustomerTarget(prd.getCustomerTarget());
             currentProduct.setShortDesc(prd.getShortDesc());
-            currentProduct.setSold(prd.getSold());
+
             currentProduct.setTarget(prd.getTarget());
 
             this.productService.createProduct(currentProduct);

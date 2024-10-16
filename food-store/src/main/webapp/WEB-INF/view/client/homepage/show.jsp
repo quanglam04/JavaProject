@@ -97,13 +97,13 @@
                                     <h1>Sản phẩm hiện có</h1>
                                 </div>
                                 <div class="col-lg-8 text-end">
-                                    <ul class="nav nav-pills d-inline-flex text-center mb-5">
+                                    <ul class="nav nav-pills d-inline-flex text-center mb-5"
+                                        style="display: flex; flex-wrap: nowrap; justify-content: space-between;">
                                         <li class="nav-item">
-                                            <a class="d-flex m-2 py-2 bg-light rounded-pill active "
+                                            <a class="d-flex m-2 py-2 bg-light rounded-pill active"
                                                 data-bs-toggle="pill" href="#tab-1">
                                                 <span class="text-dark" style="width: 130px;"> Tất cả </span>
                                             </a>
-
                                         </li>
                                         <li class="nav-item">
                                             <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill"
@@ -120,8 +120,13 @@
                                         <li class="nav-item">
                                             <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill"
                                                 href="#tab-4">
-                                                <span class="text-dark" style="width: 130px;"> Giàu Protein
-                                                </span>
+                                                <span class="text-dark" style="width: 130px;"> Giàu Protein </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill"
+                                                href="#tab-6">
+                                                <span class="text-dark" style="width: 130px;"> Chứa tinh bột </span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
@@ -345,6 +350,52 @@
                                                                             value="${_csrf.token}" /> -->
 
                                                                     <button data-product-id="${productsTypeThucUong.id}"
+                                                                        class="btnAddToCartHomepage btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                                            class="fa fa-shopping-bag me-2 text-primary"></i>
+                                                                        Thêm vào giỏ hàng
+                                                                    </button>
+
+                                                                    <!-- </form> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </c:forEach>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-6" class="tab-pane fade show p-0">
+                                    <div class="row g-4">
+                                        <div class="col-lg-12">
+                                            <div class="row g-4">
+                                                <c:forEach var="productsTypeTinhBot" items="${productsTypeTinhBots}">
+                                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                                        <div class="rounded position-relative fruite-item">
+                                                            <div class="fruite-img">
+                                                                <img src="/images/product/${productsTypeTinhBot.image}"
+                                                                    class="img-fluid w-100 rounded-top" alt="">
+                                                            </div>
+
+                                                            <div
+                                                                class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                                <a
+                                                                    href="/product/${productsTypeTinhBot.id}">${productsTypeTinhBot.name}</a>
+                                                                <p>${productsTypeTinhBot.shortDesc}</p>
+                                                                <div
+                                                                    class="d-flex  justify-content-center flex-lg-wrap ">
+                                                                    <p class="text-dark fs-5 fw-bold mb-0">
+                                                                        <fmt:formatNumber type="number"
+                                                                            value="${productsTypeTinhBot.price}" /> /
+                                                                        kg
+                                                                    </p>
+                                                                    <!-- <form action="/add-product-to-cart/${product.id}"
+                                                                        method="post">
+                                                                        <input type="hidden"
+                                                                            name="${_csrf.parameterName}"
+                                                                            value="${_csrf.token}" /> -->
+
+                                                                    <button data-product-id="${productsTypeTinhBot.id}"
                                                                         class="btnAddToCartHomepage btn border border-secondary rounded-pill px-3 text-primary"><i
                                                                             class="fa fa-shopping-bag me-2 text-primary"></i>
                                                                         Thêm vào giỏ hàng

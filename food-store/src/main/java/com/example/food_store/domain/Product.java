@@ -40,7 +40,6 @@ public class Product {
     @NotNull
     @Min(value = 1, message = "Số lượng cần lớn hơn hoặc bằng 1")
     private long quantity;
-    private long sold;
 
     public String getType() {
         return type;
@@ -58,7 +57,6 @@ public class Product {
         this.customerTarget = customerTarget;
     }
 
-    private String factory;
     private String target;
     private String type;
     private String customerTarget;
@@ -119,22 +117,6 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public long getSold() {
-        return sold;
-    }
-
-    public void setSold(long sold) {
-        this.sold = sold;
-    }
-
-    public String getFactory() {
-        return factory;
-    }
-
-    public void setFactory(String factory) {
-        this.factory = factory;
-    }
-
     public String getTarget() {
         return target;
     }
@@ -146,8 +128,8 @@ public class Product {
     @Override
     public String toString() {
         return "Product [id=" + id + ", name=" + name + ", price=" + price + ", image=" + image + ", detailDesc="
-                + detailDesc + ", shortDesc=" + shortDesc + ", quantity=" + quantity + ", sold=" + sold + ", factory="
-                + factory + ", target=" + target + "]";
+                + detailDesc + ", shortDesc=" + shortDesc + ", quantity=" + quantity + ", ="
+                + ", target=" + target + "]";
     }
 
 }

@@ -81,38 +81,7 @@
                                 <div class="row g-4 fruite">
                                     <div class="col-12 col-md-4">
                                         <div class="row g-4">
-                                            <div class="col-12" id="factoryFilter">
-                                                <div class="mb-2"><b>Hãng sản xuất</b></div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-1"
-                                                        value="lam">
-                                                    <label class="form-check-label" for="factory-1">Lâm</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-2"
-                                                        value="trong">
-                                                    <label class="form-check-label" for="factory-2">Trọng</label>
-                                                </div>
 
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-3"
-                                                        value="tuan-anh">
-                                                    <label class="form-check-label" for="factory-3">Tuấn Anh</label>
-                                                </div>
-
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-4"
-                                                        value="kien">
-                                                    <label class="form-check-label" for="factory-4">Kiên</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-5"
-                                                        value="huy">
-                                                    <label class="form-check-label" for="factory-5">Huy</label>
-                                                </div>
-
-
-                                            </div>
                                             <div class="col-12" id="targetFilter">
                                                 <div class="mb-2"><b>Mục đích sử dụng</b></div>
                                                 <div class="form-check form-check-inline">
@@ -219,6 +188,13 @@
                                                         value="thuc-pham-giau-protein">
                                                     <label class="form-check-label" for="type-3">Thực phẩm giàu
                                                         protein</label>
+                                                </div>
+
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="type-6"
+                                                        value="thuc-pham-chua-tinh-bot">
+                                                    <label class="form-check-label" for="type-6">Thực phẩm chứa tinh
+                                                        bột</label>
                                                 </div>
 
                                                 <div class="form-check form-check-inline">

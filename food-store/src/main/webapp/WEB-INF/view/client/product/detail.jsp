@@ -105,9 +105,10 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <h4 class="fw-bold mb-3">${prd.name}</h4>
-                                        <p class="mb-3">Category: ${prd.shortDesc}</p>
+
                                         <h5 class="text-dark fs-5 fw-bold mb-0">
-                                            <fmt:formatNumber type="number" value="${prd.price}" /> / kg
+                                            <fmt:formatNumber type="number" value="${prd.price}" /> vnd/ đơn vị thực
+                                            phẩm
                                         </h5>
                                         <div class="d-flex mb-4">
                                             <i class="fa fa-star text-secondary"></i>
@@ -164,20 +165,20 @@
                                             <div class="tab-pane active" id="nav-about" role="tabpanel"
                                                 aria-labelledby="nav-about-tab">
                                                 <p>${prd.detailDesc} </p>
-                                                <p>Phù hợp cho đối tượng cần: ${prd.target}</p>
+
 
 
                                             </div>
                                             <div class="tab-pane" id="nav-mission" role="tabpanel"
                                                 aria-labelledby="nav-mission-tab">
                                                 <div class="d-flex">
-                                                    <img src="/client/img/avatar.jpg"
+                                                    <img src="/images/avatar/1727521661956-avt.png"
                                                         class="img-fluid rounded-circle p-3"
                                                         style="width: 100px; height: 100px;" alt="">
                                                     <div class="">
-                                                        <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
+                                                        <p class="mb-2" style="font-size: 14px;">September 12, 2024</p>
                                                         <div class="d-flex justify-content-between">
-                                                            <h5>Jason Smith</h5>
+                                                            <h5>Trịnh Quang Lâm</h5>
                                                             <div class="d-flex mb-3">
                                                                 <i class="fa fa-star text-secondary"></i>
                                                                 <i class="fa fa-star text-secondary"></i>
@@ -186,37 +187,12 @@
                                                                 <i class="fa fa-star"></i>
                                                             </div>
                                                         </div>
-                                                        <p>The generated Lorem Ipsum is therefore always free from
-                                                            repetition
-                                                            injected humour, or non-characteristic
-                                                            words etc. Susp endisse ultricies nisi vel quam suscipit
+                                                        <p>Ngon bổ, rẻ uy tín nhé mọi người. Mình đã mua 5 lần ở đây
+                                                            rồi, lần nào cũng rất hài lòng.
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="d-flex">
-                                                    <img src="/client/img/avatar.jpg"
-                                                        class="img-fluid rounded-circle p-3"
-                                                        style="width: 100px; height: 100px;" alt="">
-                                                    <div class="">
-                                                        <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
-                                                        <div class="d-flex justify-content-between">
-                                                            <h5>Sam Peters</h5>
-                                                            <div class="d-flex mb-3">
-                                                                <i class="fa fa-star text-secondary"></i>
-                                                                <i class="fa fa-star text-secondary"></i>
-                                                                <i class="fa fa-star text-secondary"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                        <p class="text-dark">The generated Lorem Ipsum is therefore
-                                                            always
-                                                            free from
-                                                            repetition injected humour, or non-characteristic
-                                                            words etc. Susp endisse ultricies nisi vel quam suscipit
-                                                        </p>
-                                                    </div>
-                                                </div>
+
                                             </div>
                                             <div class="tab-pane" id="nav-vision" role="tabpanel">
                                                 <p class="text-dark">Tempor erat elitr rebum at clita. Diam dolor diam
@@ -310,6 +286,14 @@
                                                         <a href="#"><i class="fas fa-egg me-2"></i>Thực phẩm
                                                             giàu protein</a>
                                                         <span>(${number_4})</span>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <a href="#"><i class="	fas fa-bread-slice me-2"></i>Thực phẩm
+                                                            chứa tinh bột</a>
+                                                        <span>(${number_6})</span>
                                                     </div>
                                                 </li>
                                                 <li>

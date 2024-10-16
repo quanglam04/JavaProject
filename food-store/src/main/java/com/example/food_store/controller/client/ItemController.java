@@ -60,12 +60,14 @@ public class ItemController {
         long number_3 = this.productService.getQuantitybyType("trai-cay");
         long number_4 = this.productService.getQuantitybyType("thuc-pham-giau-protein");
         long number_5 = this.productService.getQuantitybyType("thuc-uong");
+        Long number_6 = this.productService.getQuantitybyType("thuc-pham-chua-tinh-bot");
 
         model.addAttribute("number_1", number_1);
         model.addAttribute("number_2", number_2);
         model.addAttribute("number_3", number_3);
         model.addAttribute("number_4", number_4);
         model.addAttribute("number_5", number_5);
+        model.addAttribute("number_6", number_6);
         model.addAttribute("prd", prd);
 
         return "client/product/detail";

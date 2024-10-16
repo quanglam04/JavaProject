@@ -444,9 +444,11 @@
     }
     document.addEventListener("DOMContentLoaded", function () {
         const viewMoreBtn = document.getElementById("viewMoreBtn");
-        const hiddenItems = document.querySelectorAll(".product-item.hidden");
 
         viewMoreBtn.addEventListener("click", function () {
+            // Cập nhật danh sách các sản phẩm bị ẩn mỗi lần nhấn nút
+            const hiddenItems = document.querySelectorAll(".product-item.hidden");
+
             hiddenItems.forEach((item, index) => {
                 if (index < 8) {  // Hiển thị thêm 8 sản phẩm mỗi lần nhấp
                     item.classList.remove("hidden");

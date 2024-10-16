@@ -31,7 +31,7 @@
                                     <li class="breadcrumb-item active">Orders</li>
                                 </ol>
                                 <div>
-                                    <h3>Table Order</h3>
+                                    <h3>Table Orders</h3>
                                 </div>
                                 <hr>
 
@@ -82,11 +82,11 @@
                                                 <span aria-hidden="true">&laquo;</span>
                                             </a>
                                         </li>
-                                        <c:forEach begin="0" end="${totalPages - 1}" varStatus="loop">
+                                        <c:forEach begin="1" end="${totalPages }" varStatus="loop">
                                             <li class="page-item">
                                                 <a class="${(loop.index + 1) eq currentPage ? 'active page-link' : 'page-link'}"
-                                                    href="/admin/order?page=${loop.index + 1}">
-                                                    ${loop.index + 1}
+                                                    href="/admin/order?page=${loop.index }">
+                                                    ${loop.index }
                                                 </a>
                                             </li>
                                         </c:forEach>

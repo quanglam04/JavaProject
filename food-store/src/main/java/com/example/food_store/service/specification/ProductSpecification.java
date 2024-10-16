@@ -21,9 +21,6 @@ public class ProductSpecification {
     }
 
     // case4
-    public static Specification<Product> matchListFactory(List<String> factory) {
-        return (root, query, criteriaBuilder) -> criteriaBuilder.in(root.get(Product_.FACTORY)).value(factory);
-    }
 
     public static Specification<Product> matchListcustomerTarget(List<String> customerTarget) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.in(root.get(Product_.CUSTOMER_TARGET))

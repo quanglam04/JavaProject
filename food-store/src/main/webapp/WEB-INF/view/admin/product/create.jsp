@@ -101,16 +101,7 @@
                                                 </div>
 
 
-                                                <div class="mb-3 col-12 col-md-6">
-                                                    <label class="form-label">Factory:</label>
-                                                    <form:select class="form-select" path="factory">
-                                                        <form:option value="Lâm">Lâm</form:option>
-                                                        <form:option value="Huy">Huy</form:option>
-                                                        <form:option value="Kiên">Kiên</form:option>
-                                                        <form:option value="Trọng">Trọng</form:option>
-                                                        <form:option value="Tuấn Anh">Tuấn Anh</form:option>
-                                                    </form:select>
-                                                </div>
+
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Target:</label>
                                                     <form:select class="form-select" path="target">
@@ -146,12 +137,16 @@
 
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Type:</label>
-                                                    <form:select class="form-select" path="target">
+                                                    <form:select class="form-select" path="type">
                                                         <form:option value="rau">Rau</form:option>
                                                         <form:option value="cu">Củ
                                                         </form:option>
                                                         <form:option value="thuc-pham-giau-protein">Thực phẩm giàu
                                                             protein
+                                                        </form:option>
+
+                                                        <form:option value="thuc-pham-chua-tinh-bot">Thực phẩm chứa
+                                                            tinh bột
                                                         </form:option>
                                                         <form:option value="trai-cay">Trái cây</form:option>
                                                         <form:option value="thuc-uong">Thức uống</form:option>
