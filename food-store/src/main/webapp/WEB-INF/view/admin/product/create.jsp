@@ -120,7 +120,7 @@
                                                     <form:select class="form-select" path="customerTarget">
                                                         <form:option value="dan-van-phong">Dành cho dân văn phòng
                                                         </form:option>
-                                                        <form:option value="dan-tap-the-hinh">Dành cho dân tập thể
+                                                        <form:option value="tap-the-hinh">Dành cho dân tập thể
                                                             hình
                                                         </form:option>
                                                         <form:option value="be-duoi-1-tuoi">Dành cho bé dưới 1 tuổi
