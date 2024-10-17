@@ -4,6 +4,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import com.example.food_store.domain.User;
 import com.example.food_store.domain.dto.RegisterDTO;
 import com.example.food_store.service.OrderService;
 import com.example.food_store.service.ProductService;
+import com.example.food_store.service.UploadService;
 import com.example.food_store.service.UserService;
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
@@ -22,8 +24,11 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class HomePageController {
@@ -32,13 +37,15 @@ public class HomePageController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
     private final OrderService orderService;
+    private final UploadService uploadService;
 
     public HomePageController(ProductService productService, UserService userService, PasswordEncoder passwordEncoder,
-            OrderService orderService) {
+            OrderService orderService, UploadService uploadService) {
         this.productService = productService;
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.orderService = orderService;
+        this.uploadService = uploadService;
     }
 
     @RequestMapping("/")
@@ -121,6 +128,38 @@ public class HomePageController {
         User user = this.userService.getUserById(id);
         model.addAttribute("user", user);
         return "client/homepage/viewProfile";
+    }
+
+    @GetMapping("/update-profile/{id}")
+    public String getProfileUpdate(Model model, @PathVariable long id) {
+        User currentUser = this.userService.getUserById(id);
+        model.addAttribute("id", id);
+        model.addAttribute("newUser", currentUser);
+        return "client/homepage/updateProfile";
+    }
+
+    @PostMapping("/update-profile")
+    public String postMethodName(Model model, @ModelAttribute("newUser") User trinhlam,
+            BindingResult newBindingResult,
+            @RequestParam("avatarFile") MultipartFile file,
+            HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        User currentUser = this.userService.getUserById(trinhlam.getId());
+        List<FieldError> errors = newBindingResult.getFieldErrors();
+        for (FieldError error : errors) {
+            System.out.println(error.getField() + " - " + error.getDefaultMessage());
+        }
+
+        if (newBindingResult.hasErrors())
+            return "/";
+
+        String avatar = this.uploadService.handleSaveUploadFile(file, "avatar");
+        currentUser.setAvatar(avatar);
+        currentUser.setPhone(trinhlam.getPhone());
+        currentUser.setAddress(trinhlam.getAddress());
+        this.userService.handleSaveUser(currentUser);
+        session.setAttribute("avatar", avatar);
+        return "redirect:/view-profile";
     }
 
 }

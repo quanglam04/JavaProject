@@ -68,6 +68,10 @@
                                         <div class="btn btn-success mt-3">
                                             <a style="color: white; text-decoration: none;" href="/">Back</a>
                                         </div>
+                                        <div class="btn btn-warning mt-3">
+                                            <a style="color: white; text-decoration: none;"
+                                                href="/update-profile/${user.id}">Update</a>
+                                        </div>
                                     </ul>
 
                                 </div>
