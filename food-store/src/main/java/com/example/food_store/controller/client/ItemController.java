@@ -1,30 +1,38 @@
 package com.example.food_store.controller.client;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
-import com.example.food_store.domain.*;
-import com.example.food_store.domain.dto.ProductSearchRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.food_store.domain.Cart;
+import com.example.food_store.domain.CartDetail;
+import com.example.food_store.domain.Product;
+import com.example.food_store.domain.Product_;
+import com.example.food_store.domain.User;
 import com.example.food_store.domain.dto.ProductCriteriaDTO;
 import com.example.food_store.repository.CartDetailRepository;
 import com.example.food_store.repository.CartRepository;
 import com.example.food_store.service.ProductService;
+import com.example.food_store.service.SendEmail;
 import com.example.food_store.service.UserService;
 import com.fasterxml.jackson.databind.ser.std.StdArraySerializers.IntArraySerializer;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -33,29 +41,46 @@ public class ItemController {
     private final UserService userService;
     private final CartDetailRepository cartDetailRepository;
     private final CartRepository cartRepository;
+    private final SendEmail sendEmail;
 
     public ItemController(ProductService productService, UserService userService,
-            CartDetailRepository cartDetailRepository, CartRepository cartRepository) {
+            CartDetailRepository cartDetailRepository, CartRepository cartRepository,
+            SendEmail sendEmail) {
         this.productService = productService;
         this.userService = userService;
         this.cartDetailRepository = cartDetailRepository;
         this.cartRepository = cartRepository;
+        this.sendEmail = sendEmail;
     }
 
     @GetMapping("/product/{id}")
     public String getProductPage(Model model, @PathVariable long id) {
         Product prd = this.productService.fetchProductById(id).get();
+        long number_1 = this.productService.getQuantitybyType("rau");
+        long number_2 = this.productService.getQuantitybyType("cu");
+        long number_3 = this.productService.getQuantitybyType("trai-cay");
+        long number_4 = this.productService.getQuantitybyType("thuc-pham-giau-protein");
+        long number_5 = this.productService.getQuantitybyType("thuc-uong");
+        Long number_6 = this.productService.getQuantitybyType("thuc-pham-chua-tinh-bot");
+
+        model.addAttribute("number_1", number_1);
+        model.addAttribute("number_2", number_2);
+        model.addAttribute("number_3", number_3);
+        model.addAttribute("number_4", number_4);
+        model.addAttribute("number_5", number_5);
+        model.addAttribute("number_6", number_6);
         model.addAttribute("prd", prd);
+
         return "client/product/detail";
     }
 
     @PostMapping("/add-product-to-cart/{id}")
-    public void addProductToCart(@PathVariable long id, HttpServletRequest request) {
+    public String addProductToCart(@PathVariable long id, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         long productId = id;
         String email = (String) session.getAttribute("email");
         this.productService.handleAddProductToCart(email, productId, session, 1);
-        return;
+        return "redirect:/products";
     }
 
     @GetMapping("/cart")
@@ -130,14 +155,28 @@ public class ItemController {
     }
 
     @GetMapping("/afterOrder")
-    public String getAfterOrderPage() {
+    public String getAfterOrderPage(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        Long id = (long) session.getAttribute("id");
+
+        User user = this.userService.getUserById(id);
+        String email = user.getEmail();
+
+        Enumeration<String> attributes = request.getSession().getAttributeNames();
+        while (attributes.hasMoreElements()) {
+            String attribute = (String) attributes.nextElement();
+            System.out.println(">>>>>>>>>" + attribute + " : " + request.getSession().getAttribute(attribute));
+        }
+
+        sendEmail.sendEmail(email, "Xác nhận đơn hàng",
+                "FoodStore chân thành cảm ơn bạn vì đã sử dụng sản phẩm của chúng tôi!");
         return "client/cart/afterOrder";
     }
 
     @PostMapping("/add-product-from-view-detail")
     public String handleAddProductFromViewDetail(
             @RequestParam("id") long id,
-            @RequestParam("quantity") long quantity,
+            @RequestParam(value = "quantity", defaultValue = "1") long quantity,
             HttpServletRequest request) {
         HttpSession session = request.getSession(false);
 
@@ -162,15 +201,15 @@ public class ItemController {
             // page = 1
             // TODO: handle exception
         }
-        Pageable pageable = PageRequest.of(page - 1, 2);
+        Pageable pageable = PageRequest.of(page - 1, 5);
         if (productCriteriaDTO.getSort() != null && productCriteriaDTO.getSort().isPresent()) {
             String sort = productCriteriaDTO.getSort().get();
             if (sort.equals("gia-tang-dan")) {
-                pageable = PageRequest.of(page - 1, 2, Sort.by(Product_.PRICE).ascending());
+                pageable = PageRequest.of(page - 1, 5, Sort.by(Product_.PRICE).ascending());
             } else if (sort.equals("gia-giam-dan")) {
-                pageable = PageRequest.of(page - 1, 2, Sort.by(Product_.PRICE).descending());
+                pageable = PageRequest.of(page - 1, 5, Sort.by(Product_.PRICE).descending());
             } else {
-                pageable = PageRequest.of(page - 1, 2);
+                pageable = PageRequest.of(page - 1, 5);
             }
         }
 
@@ -189,11 +228,15 @@ public class ItemController {
         return "client/product/show";
     }
 
+
     @GetMapping("/item/search")
     public ModelAndView search(@RequestParam String text) {
         ModelAndView mav = new ModelAndView("client/product/search");
+        mav.addObject("text", text);
         List<Product> productList = productService.findProductByName(text);
         mav.addObject("productList", productList);
         return mav;
     }
+
+
 }

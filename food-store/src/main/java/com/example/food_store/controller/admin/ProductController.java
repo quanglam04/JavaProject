@@ -3,7 +3,6 @@ package com.example.food_store.controller.admin;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.food_store.domain.dto.ProductSearchRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -11,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.food_store.domain.Product;
 
@@ -20,8 +21,9 @@ import com.example.food_store.service.UploadService;
 
 import jakarta.validation.Valid;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ProductController {
@@ -79,7 +81,7 @@ public class ProductController {
         String img = this.uploadService.handleSaveUploadFile(file, "product");
         prd.setImage(img);
         this.productService.createProduct(prd);
-        System.out.println(prd.toString());
+        System.out.println(prd);
         return "redirect:/admin/product";
 
     }
@@ -127,12 +129,13 @@ public class ProductController {
                 currentProduct.setImage(img);
             }
             currentProduct.setDetailDesc(prd.getDetailDesc());
-            currentProduct.setFactory(prd.getFactory());
             currentProduct.setName(prd.getName());
             currentProduct.setPrice(prd.getPrice());
             currentProduct.setQuantity(prd.getQuantity());
+            currentProduct.setType(prd.getType());
+            currentProduct.setCustomerTarget(prd.getCustomerTarget());
             currentProduct.setShortDesc(prd.getShortDesc());
-            currentProduct.setSold(prd.getSold());
+
             currentProduct.setTarget(prd.getTarget());
 
             this.productService.createProduct(currentProduct);
@@ -141,7 +144,5 @@ public class ProductController {
         return "redirect:/admin/product";
 
     }
-
-
 
 }

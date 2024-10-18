@@ -1,11 +1,5 @@
 package com.example.food_store.service;
 
-<<<<<<< HEAD
-import org.springframework.stereotype.Service;
-
-@Service
-public class UserService {
-=======
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -29,13 +23,10 @@ public class UserService {
         this.roleRepository = roleRepository;
         this.orderRepository = orderRepository;
     }
->>>>>>> featureByLam
 
     public String handleHello() {
         return "hello from service";
     }
-<<<<<<< HEAD
-=======
 
     public User handleSaveUser(User user) {
         return this.userRepository.save(user);
@@ -82,5 +73,4 @@ public class UserService {
         return this.orderRepository.count();
     }
 
->>>>>>> featureByLam
 }

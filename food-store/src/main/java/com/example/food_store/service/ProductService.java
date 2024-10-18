@@ -1,6 +1,5 @@
 package com.example.food_store.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,6 +47,10 @@ public class ProductService {
         this.orderRepository = orderRepository;
     }
 
+    public long getQuantitybyType(String type) {
+        return this.productRepository.countByType(type);
+    }
+
     public Product createProduct(Product prd) {
         return this.productRepository.save(prd);
     }
@@ -56,10 +59,16 @@ public class ProductService {
         return this.productRepository.findAll(pageable);
     }
 
+    public List<Product> fetchProductByType(String type) {
+        return this.productRepository.findByType(type);
+    }
+
     public Page<Product> fetchProductsWithSpec(Pageable page, ProductCriteriaDTO productCriteriaDTO) {
         if (productCriteriaDTO.getTarget() == null
-                && productCriteriaDTO.getFactory() == null
-                && productCriteriaDTO.getPrice() == null) {
+
+                && productCriteriaDTO.getPrice() == null
+                && productCriteriaDTO.getType() == null
+                && productCriteriaDTO.getCustomertarget() == null) {
             return this.productRepository.findAll(page);
         }
 
@@ -70,9 +79,16 @@ public class ProductService {
                     .matchListTarget(productCriteriaDTO.getTarget().get());
             combinedSpec = combinedSpec.and(currentSpecs);
         }
-        if (productCriteriaDTO.getFactory() != null && productCriteriaDTO.getFactory().isPresent()) {
+
+        if (productCriteriaDTO.getType() != null && productCriteriaDTO.getType().isPresent()) {
             Specification<Product> currentSpecs = ProductSpecification
-                    .matchListFactory(productCriteriaDTO.getFactory().get());
+                    .matchListType(productCriteriaDTO.getType().get());
+            combinedSpec = combinedSpec.and(currentSpecs);
+        }
+
+        if (productCriteriaDTO.getCustomertarget() != null && productCriteriaDTO.getCustomertarget().isPresent()) {
+            Specification<Product> currentSpecs = ProductSpecification
+                    .matchListcustomerTarget(productCriteriaDTO.getCustomertarget().get());
             combinedSpec = combinedSpec.and(currentSpecs);
         }
 
@@ -235,8 +251,10 @@ public class ProductService {
 
                 double sum = 0;
                 for (CartDetail cd : cartDetails) {
-                    sum += cd.getPrice();
+                    sum += cd.getPrice() * cd.getQuantity();
+                    System.out.println(cd.getPrice());
                 }
+
                 order.setTotalPrice(sum);
                 order = this.orderRepository.save(order);
 
@@ -273,7 +291,6 @@ public class ProductService {
     public long countProduct() {
         return this.productRepository.count();
     }
-
     public List<Product> findProductByName(String text) {
         List<Product> products = productRepository.findAllByNameContaining(text);
         return products;

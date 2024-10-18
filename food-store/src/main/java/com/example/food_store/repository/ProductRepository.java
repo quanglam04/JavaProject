@@ -8,9 +8,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import com.example.food_store.domain.Product;
-
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpecificationExecutor<Product> {
@@ -20,5 +18,9 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 
     Page<Product> findAll(Specification<Product> spec, Pageable page);
 
-    List<Product> findAllByNameContaining(String username);
+    long countByType(String type);
+
+    List<Product> findByType(String type);
+
+    List<Product> findAllByNameContaining(String text);
 }

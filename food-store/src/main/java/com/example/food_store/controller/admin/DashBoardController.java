@@ -1,6 +1,5 @@
 package com.example.food_store.controller.admin;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +8,6 @@ import com.example.food_store.service.ProductService;
 import com.example.food_store.service.UserService;
 
 @Controller
-
 public class DashBoardController {
     private final UserService userService;
     private final ProductService productService;

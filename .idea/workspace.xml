@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dcab6410-2d76-48e8-aadc-05999f9bc504" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/FoodStoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/FoodStoreApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/admin/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/admin/DashBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/admin/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/admin/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/admin/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/admin/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/client/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/client/HomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/client/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/controller/client/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/domain/dto/ProductCriteriaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/domain/dto/ProductCriteriaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/domain/dto/ProductSearchRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/repository/Repositoy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/service/specification/ProductSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/java/com/example/food_store/service/specification/ProductSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/baner-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/banner-fruits.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/best-product-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/best-product-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/best-product-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/best-product-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/best-product-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/best-product-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/cart-page-header-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/featur-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/featur-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/featur-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/fruite-item-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/fruite-item-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/fruite-item-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/fruite-item-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/fruite-item-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/fruite-item-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/hero-img-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/hero-img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/hero-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/payment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/single-item.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/testimonial-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/vegetable-item-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/vegetable-item-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/vegetable-item-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/vegetable-item-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/vegetable-item-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/img/vegetable-item-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/easing/easing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/easing/easing.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/lightbox/css/lightbox.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/lightbox/images/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/lightbox/images/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/lightbox/images/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/lightbox/images/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/lightbox/js/lightbox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/assets/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/assets/owl.carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/assets/owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/assets/owl.theme.default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/assets/owl.theme.default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/assets/owl.theme.green.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/assets/owl.theme.green.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/assets/owl.video.play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/owl.carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/owlcarousel/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/waypoints/links.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/lib/waypoints/waypoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_accordion.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_badge.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_breadcrumb.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_button-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_card.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_carousel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_close.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_containers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_helpers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_images.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_offcanvas.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_popover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_progress.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_reboot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_root.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_spinners.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_toasts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_tooltip.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_transitions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/bootstrap-grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/bootstrap-reboot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/bootstrap-utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_floating-labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_form-check.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_form-control.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_form-range.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_form-select.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_form-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_input-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/forms/_validation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/helpers/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/helpers/_colored-links.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/helpers/_position.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/helpers/_ratio.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/helpers/_stretched-link.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/helpers/_text-truncation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/helpers/_visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_border-radius.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_box-shadow.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_breakpoints.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_caret.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_color-scheme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_container.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_deprecate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_gradients.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_image.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_lists.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_reset-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_resize.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_table-variants.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_text-truncate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_transition.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/mixins/_visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/utilities/_api.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/static/scss/bootstrap/scss/vendor/_rfs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/templates/fragments/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/templates/fragments/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/resources/templates/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/admin/order/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/admin/order/show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/admin/product/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/admin/product/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/admin/product/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/admin/product/show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/admin/product/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/admin/product/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/cart/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/cart/show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/homepage/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/homepage/show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/layout/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/product/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/product/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/product/search.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/product/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/WEB-INF/view/client/product/show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/resources/client/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/resources/client/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/resources/client/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/food-store/src/main/webapp/resources/client/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food-store/src/main/webapp/resources/images/product/1728746063260-⚘ ⦂ GOJO SATORU.jpg" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2nbdnSY9OCfE7q8a1lPilfbGMED" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "featureByTuan",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="FoodStoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="food-store" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.food_store.FoodStoreApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="0ea228a9-6dd3-4198-be1a-af49a58d8765" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51526" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dcab6410-2d76-48e8-aadc-05999f9bc504" name="Changes" comment="" />
+      <created>1729245877326</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729245877326</updated>
+      <workItem from="1729245878910" duration="163000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

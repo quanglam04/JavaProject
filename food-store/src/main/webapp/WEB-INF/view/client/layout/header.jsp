@@ -17,16 +17,7 @@
                         <div class="navbar-nav mx-auto">
                             <a href="/" class="nav-item nav-link active">Trang chủ</a>
                             <a href="/products" class="nav-item nav-link">Sản phẩm</a>
-                            <!-- <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="cart.html" class="dropdown-item">Cart</a>
-                                    <a href="chackout.html" class="dropdown-item">Chackout</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
-                                </div>
-                            </div> -->
-                            <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
+
                         </div>
                         <div class="d-flex m-3 me-0">
 
@@ -39,7 +30,7 @@
                                     <i class="fa fa-shopping-bag fa-2x"></i>
                                     <span
                                         class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                        style="top: -5px; left: 15px; height: 20px; min-width: 20px;">
+                                        style="top: -5px; left: 15px; height: 20px; min-width: 20px;" id="sumCart">
                                         ${sessionScope.sum}
                                     </span>
                                 </a>
@@ -56,13 +47,14 @@
                                     <ul class="dropdown-menu dropdown-menu-end p-4" aria-labelledby="dropdownMenuLink">
                                         <li class="d-flex align-items-center flex-column" style="min-width: 300px;">
                                             <img style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden;"
-                                                src="/images/avatar/${sessionScope.avatar}" />
+                                                src="/images/avatar/${sessionScope.avatar}" alt="avatar" />
+
                                             <div class="text-center my-3">
                                                 <c:out value="${sessionScope.fullName}" />
                                             </div>
                                         </li>
 
-                                        <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
+                                        <li><a class="dropdown-item" href="/view-profile">Quản lý tài khoản</a></li>
 
                                         <li><a class="dropdown-item" href="/order-history">Lịch sử mua hàng</a></li>
                                         <li>
@@ -81,7 +73,7 @@
                             </c:if>
 
                             <c:if test="${empty pageContext.request.userPrincipal}">
-                                <a href="/login" class="position-relative me-4 my-auto">
+                                <a href="/login" class="a-login position-relative me-4 my-auto">
                                     Đăng nhập
 
                                 </a>

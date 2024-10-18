@@ -43,7 +43,7 @@
                                                         <th>ID</th>
                                                         <th>Name</th>
                                                         <th>Price</th>
-                                                        <th>Factory</th>
+
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -59,7 +59,7 @@
                                                                 </p>
 
                                                             </td>
-                                                            <td>${product.factory}</td>
+
                                                             <td>
                                                                 <a href="/admin/product/${product.id}"
                                                                     class="btn btn-success">View</a>
@@ -95,7 +95,7 @@
                                                     </c:forEach>
 
                                                     <li class="page-item">
-                                                        <a class="${currentPage == totalPage ? 'page-link disabled' : 'page-link'}"
+                                                        <a class="${currentPage == totalPages ? 'page-link disabled' : 'page-link'}"
                                                             href="/admin/product?page=${currentPage+1}"
                                                             aria-label="Next">
                                                             <span aria-hidden="true">&raquo;</span>

@@ -35,6 +35,22 @@
 
                     <!-- Template Stylesheet -->
                     <link href="/client/css/style.css" rel="stylesheet">
+
+                    <meta name="_csrf" content="${_csrf.token}" />
+                    <!-- default header name is X-CSRF-TOKEN -->
+                    <meta name="_csrf_header" content="${_csrf.headerName}" />
+
+                    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css"
+                        rel="stylesheet">
+
+                    <style>
+                        .page-link.disabled {
+                            color: var(--bs-pagination-disabled-color);
+                            pointer-events: none;
+                            background-color: var(--bs-pagination-disabled-bg);
+                        }
+                    </style>
+
                 </head>
 
                 <body>
@@ -47,27 +63,7 @@
                     <!-- Spinner End -->
 
                     <jsp:include page="../layout/header.jsp" />
-                    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                            <div class="modal-content rounded-0">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <form:form id="searchForm" action="/item/search" method="get" >
-                                    <div class="  d-flex align-items-center">
-                                        <div class="input-group w-75 mx-auto d-flex">
-                                            <input name="text" id="inputSearch" type="search" class="form-control p-3" placeholder="Từ khóa"
-                                                   aria-describedby="search-icon-1"/>
-                                            <button type="submit"  id="search-icon-1" class="input-group-text p-3"><i
-                                                    class="fa fa-search"></i></button>
-                                        </div>
-                                    </div>
-                                </form:form>
 
-                            </div>
-                        </div>
-                    </div>
                     <!-- Single Product Start -->
                     <div class="container-fluid py-5 mt-5">
                         <div class="container py-5">
@@ -85,38 +81,7 @@
                                 <div class="row g-4 fruite">
                                     <div class="col-12 col-md-4">
                                         <div class="row g-4">
-                                            <div class="col-12" id="factoryFilter">
-                                                <div class="mb-2"><b>Hãng sản xuất</b></div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-1"
-                                                        value="lam">
-                                                    <label class="form-check-label" for="factory-1">Lâm</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-2"
-                                                        value="trong">
-                                                    <label class="form-check-label" for="factory-2">Trọng</label>
-                                                </div>
 
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-3"
-                                                        value="tuan-anh">
-                                                    <label class="form-check-label" for="factory-3">Tuấn Anh</label>
-                                                </div>
-
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-4"
-                                                        value="kien">
-                                                    <label class="form-check-label" for="factory-4">Kiên</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="factory-5"
-                                                        value="huy">
-                                                    <label class="form-check-label" for="factory-5">Huy</label>
-                                                </div>
-
-
-                                            </div>
                                             <div class="col-12" id="targetFilter">
                                                 <div class="mb-2"><b>Mục đích sử dụng</b></div>
                                                 <div class="form-check form-check-inline">
@@ -137,46 +102,80 @@
                                                         cao</label>
                                                 </div>
 
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="target-4"
+                                                        value="tang-can">
+                                                    <label class="form-check-label" for="target-4">Tăng cân
+                                                    </label>
+                                                </div>
+
 
                                             </div>
 
-                                            <div class="col-12" id="subjectFilter">
+                                            <div class="col-12" id="customertargetFilter">
                                                 <div class="mb-2"><b>Đối tượng</b></div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="subject-1"
-                                                        value="tap-the-hinh">
-                                                    <label class="form-check-label" for="subject-1">Dành cho người
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-1" value="tap-the-hinh">
+                                                    <label class="form-check-label" for="customertarget-1">Dành cho
+                                                        người
                                                         tập
                                                         thể hình</label>
                                                 </div>
 
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="subject-2"
-                                                        value="dan-van-phong">
-                                                    <label class="form-check-label" for="subject-2">Dành cho dân văn
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-2" value="dan-van-phong">
+                                                    <label class="form-check-label" for="customertarget-2">Dành cho dân
+                                                        văn
                                                         phòng</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="subject-3"
-                                                        value="phu-nu-co-thai">
-                                                    <label class="form-check-label" for="subject-3">Dành cho phụ nữ
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-3" value="phu-nu-co-thai">
+                                                    <label class="form-check-label" for="customertarget-3">Dành cho
+                                                        phụ nữ
                                                         có thai</label>
                                                 </div>
 
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="subject-4"
-                                                        value="danh-cho-be-duoi-1-tuoi">
-                                                    <label class="form-check-label" for="subject-4">Dành cho bé dưới
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-4" value="be-duoi-1-tuoi">
+                                                    <label class="form-check-label" for="customertarget-4">Dành cho bé
+                                                        dưới
                                                         1 tuổi</label>
                                                 </div>
+
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-5" value="nguoi-an-kieng">
+                                                    <label class="form-check-label" for="customertarget-5">Dành cho
+                                                        người ăn
+                                                        kiêng</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="customertarget-6" value="tat-ca">
+                                                    <label class="form-check-label" for="customertarget-6">Tất
+                                                        cả</label>
+                                                </div>
+
+
+
                                             </div>
 
                                             <div class="col-12" id="typeFilter">
                                                 <div class="mb-2"><b>Loại</b></div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="type-1"
-                                                        value="rau-cu">
-                                                    <label class="form-check-label" for="type-1">Rau,củ</label>
+                                                        value="rau">
+                                                    <label class="form-check-label" for="type-1">Rau</label>
+                                                </div>
+
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="type-4"
+                                                        value="cu">
+                                                    <label class="form-check-label" for="type-4">Củ</label>
                                                 </div>
 
                                                 <div class="form-check form-check-inline">
@@ -189,6 +188,19 @@
                                                         value="thuc-pham-giau-protein">
                                                     <label class="form-check-label" for="type-3">Thực phẩm giàu
                                                         protein</label>
+                                                </div>
+
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="type-6"
+                                                        value="thuc-pham-chua-tinh-bot">
+                                                    <label class="form-check-label" for="type-6">Thực phẩm chứa tinh
+                                                        bột</label>
+                                                </div>
+
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="type-5"
+                                                        value="thuc-uong">
+                                                    <label class="form-check-label" for="type-5">Thức uống</label>
                                                 </div>
                                             </div>
 
@@ -288,17 +300,20 @@
                                                                         value="${product.price}" />
                                                                     đ
                                                                 </p>
-                                                                <form action="/add-product-to-cart/${product.id}"
-                                                                    method="post">
-                                                                    <input type="hidden" name="${_csrf.parameterName}"
-                                                                        value="${_csrf.token}" />
+                                                                <!-- <form action="/add-product-to-cart/${product.id}"
+                                                                    method="post"> -->
+                                                                <input type="hidden" name="${_csrf.parameterName}"
+                                                                    value="${_csrf.token}" />
+                                                                <input class="form-control d-none" type="text"
+                                                                    name="quantity" id="cartDetails0.quantity"
+                                                                    value="1" />
 
-                                                                    <button id="addToCart"
-                                                                        class="mx-auto btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                            class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
+                                                                <button data-product-id="${product.id}"
+                                                                    class="btnAddToCartDetail mx-auto btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                                        class="fa fa-shopping-bag me-2 text-primary"></i>
+                                                                    Thêm vào giỏ hàng
+                                                                </button>
+                                                                <!-- </form> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -358,12 +373,8 @@
 
                     <!-- Template Javascript -->
                     <script src="/client/js/main.js"></script>
-                    <script>
-                        $('#addToCart').click(function (e){
-                           e.preventDefault();
-                           window.location.href="/products"
-                        });
-                    </script>
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
                 </body>
 
                 </html>
