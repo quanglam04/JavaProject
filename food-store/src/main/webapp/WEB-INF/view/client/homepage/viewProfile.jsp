@@ -1,90 +1,142 @@
-<html lang="en">
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <style>
-        /* Đảm bảo chiều cao tối thiểu của section là 100% chiều cao màn hình */
-        section {
-            height: 100vh;
-        }
+    <html lang="en">
 
-        a :hover {
-            opacity: 0.3;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View Profile</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: #f7f7f7;
+                font-family: Arial, sans-serif;
+            }
 
-        a {
-            text-decoration: none;
-        }
-    </style>
-</head>
+            .card {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 30px;
+                background-color: #ffffff;
+            }
 
-<body>
-    <section class="bg-light d-flex justify-content-center align-items-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 mb-4 mb-sm-5">
-                    <div class="row " style="width: 15%;margin-right: auto; margin-left: auto; margin-bottom: 70px; ">
-                        <img src="/images/logo/logo.png" alt="">
-                    </div>
-                    <div class="card card-style1 border-0  ">
-                        <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6 mb-4 mb-lg-0">
-                                    <img src="/images/avatar/${user.avatar}" class="img-thumbnail" alt="avatar">
-                                    <!-- <div style="margin-left: 107px; margin-top: 5px;">
-                                        <a href="">Upload images</a>
-                                    </div> -->
-                                </div>
-                                <div class="col-lg-6 px-xl-10">
-                                    <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-3 rounded">
-                                        <h3 class="h2 text-primary mb-0 ">${user.fullName}</h3>
+            .card-body {
+                padding: 40px;
+            }
 
+            .profile-img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 20px;
+            }
+
+            .profile-info h3 {
+                font-size: 28px;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .profile-info span {
+                font-size: 16px;
+                color: #666;
+            }
+
+            .profile-details {
+                margin-top: 20px;
+            }
+
+            .profile-details li {
+                margin-bottom: 15px;
+                font-size: 18px;
+                color: #333;
+            }
+
+            .profile-details li span {
+                font-weight: bold;
+                color: #555;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                margin-top: 15px;
+                padding: 10px 20px;
+                border-radius: 30px;
+                font-size: 16px;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border: none;
+            }
+
+            .btn-secondary {
+                background-color: #f0ad4e;
+                border: none;
+            }
+
+            .btn a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .btn a:hover {
+                opacity: 0.8;
+            }
+
+            .logo {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 150px;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="bg-light d-flex justify-content-center align-items-center" style="margin-top: 40px;">
+            <div class=" container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <img src="/images/logo/logo.png" alt="Logo" class="logo">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4 text-center">
+                                        <img src="/images/avatar/${user.avatar}" alt="Avatar" class="profile-img">
+                                        <div class="btn btn-secondary mt-3">
+                                            <a href="/update-profile/${user.id}">Cập nhật</a>
+                                        </div>
                                     </div>
-                                    <ul class="  mb-1-9">
-                                        <li class="mb-2 mb-xl-3 display-28">
-                                            <span
-                                                class="display-26 text-secondary me-2 font-weight-600 text-secondary">Email:
-                                                ${user.email}
-                                            </span>
-                                        </li>
-                                        <li class="mb-2 mb-xl-3 display-28"><span
-                                                class="display-26 text-secondary me-2 font-weight-600 text-secondary">Phone:
-                                                ${user.phone}</span>
-                                        </li>
-                                        <li class="mb-2 mb-xl-3 display-28"><span
-                                                class="display-26 text-secondary me-2 font-weight-600 text-secondary">Address:
-                                                ${user.address}</span>
-                                        </li>
-                                        <li class="mb-2 mb-xl-3 display-28"><span
-                                                class="display-26 text-secondary me-2 font-weight-600 text-secondary">Role:
-                                                ${user.role.name}</span>
-                                        </li>
+                                    <div class="col-lg-8 profile-info">
+                                        <h1 style="font-weight: bold;">${user.fullName}</h1>
 
 
-                                        <div class="btn btn-success mt-3">
-                                            <a style="color: white; text-decoration: none;" href="/">Back</a>
+                                        <ul class="profile-details list-unstyled mt-4">
+                                            <li><span>Email:</span> ${user.email}</li>
+                                            <li><span>Phone:</span> ${user.phone}</li>
+                                            <li><span>Address:</span> ${user.address}</li>
+                                            <li><span>Role:</span> ${user.role.name}</li>
+                                        </ul>
+
+                                        <div class="btn btn-primary mt-3">
+                                            <a href="/">Trở lại trang chủ</a>
                                         </div>
-                                        <div class="btn btn-warning mt-3">
-                                            <a style="color: white; text-decoration: none;"
-                                                href="/update-profile/${user.id}">Update</a>
-                                        </div>
-                                    </ul>
-
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-
-
             </div>
-        </div>
-    </section>
+        </section>
 
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 
-</html>
+    </html>

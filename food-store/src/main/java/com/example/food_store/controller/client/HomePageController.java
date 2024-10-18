@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.food_store.domain.Order;
 import com.example.food_store.domain.Product;
 import com.example.food_store.domain.User;
+import com.example.food_store.domain.dto.ChangePasswordDTO;
 import com.example.food_store.domain.dto.RegisterDTO;
 import com.example.food_store.service.OrderService;
 import com.example.food_store.service.ProductService;
@@ -28,7 +29,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class HomePageController {
@@ -160,6 +160,52 @@ public class HomePageController {
         this.userService.handleSaveUser(currentUser);
         session.setAttribute("avatar", avatar);
         return "redirect:/view-profile";
+    }
+
+    @GetMapping("/change-password")
+    public String getChangePasswordPage(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession();
+        Long id = (long) session.getAttribute("id");
+        User user = this.userService.getUserById(id);
+
+        ChangePasswordDTO changePasswordDTO = new ChangePasswordDTO();
+        changePasswordDTO.setUserId(user.getId());
+
+        model.addAttribute("changePasswordDTO", changePasswordDTO);
+        return "client/homepage/changePassword";
+    }
+
+    @PostMapping("/change-password")
+    public String changePassword(@ModelAttribute("changePasswordDTO") @Valid ChangePasswordDTO changePasswordDTO,
+            BindingResult bindingResult,
+            Model model) {
+        if (bindingResult.hasErrors()) {
+            System.out.println(">>>>>>>>>>>" + bindingResult.getFieldError());
+            System.out.println(">>>>>>>>>>>>>" + bindingResult.getFieldError().getDefaultMessage());
+            String error = bindingResult.getFieldError().getDefaultMessage();
+            model.addAttribute("errorNewpassword", error);
+            return "client/homepage/changePassword";
+        }
+        Long userId = changePasswordDTO.getUserId();
+        String lastPassword = changePasswordDTO.getLastPassword();
+        String newPassword = changePasswordDTO.getNewPassword();
+
+        User user = this.userService.getUserById(userId);
+        if (passwordEncoder.matches(lastPassword, user.getPassword())) {
+            user.setPassword(passwordEncoder.encode(newPassword));
+            this.userService.handleSaveUser(user);
+
+            model.addAttribute("message", "Đổi mật khẩu thành công");
+            return "redirect:/success-page"; // Đổi trang redirect tùy thuộc vào luồng ứng dụng
+        } else {
+            model.addAttribute("error", "Mật khẩu không chính xác");
+            return "client/homepage/changePassword";
+        }
+    }
+
+    @GetMapping("success-page")
+    public String getSuccessPage() {
+        return "client/homepage/changePasswordSuccess";
     }
 
 }

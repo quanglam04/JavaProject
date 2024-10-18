@@ -52,7 +52,7 @@
                         <div class="container py-5">
                             <div class="mb-3">
                                 <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
+                                    <ol class="breadcrumb mt-3">
                                         <li class="breadcrumb-item"><a href="/">Home</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Chi Tiết Giỏ Hàng</li>
                                     </ol>
@@ -146,6 +146,8 @@
                                     </tbody>
                                 </table>
                             </div>
+
+
                             <c:if test="${ not empty cartDetails}">
 
                                 <div class="mt-5 row g-4 justify-content-start">
