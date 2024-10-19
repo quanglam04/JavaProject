@@ -1,5 +1,7 @@
 package com.example.food_store.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -294,5 +296,14 @@ public class ProductService {
     public List<Product> findProductByName(String text) {
         List<Product> products = productRepository.findAllByNameContaining(text);
         return products;
+    }
+
+    public List<String> getAllProductNames() {
+        List<String> names = new ArrayList<>();
+        List<Product> products = productRepository.findAll();
+        for (Product product : products) {
+            names.add("\"" + product.getName() + "\"");
+        }
+        return names;
     }
 }

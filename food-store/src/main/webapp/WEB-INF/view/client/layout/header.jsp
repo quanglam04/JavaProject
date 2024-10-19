@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
         <!-- Navbar start -->
         <div class="container-fluid fixed-top">
@@ -22,10 +24,15 @@
                         <div class="d-flex m-3 me-0">
 
                             <c:if test="${not empty pageContext.request.userPrincipal}">
-                                <button
-                                    class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
-                                    data-bs-toggle="modal" data-bs-target="#searchModal"><i
-                                        class="fas fa-search text-primary"></i></button>
+                                <form:form action="/item/search" method="get" class = "ui-widget" cssStyle="margin-top: 15px">
+                                    <div class="input-group rounded" >
+                                        <input name="text" id="tags" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                        <button type="submit" class="input-group-text border-0" id="search-addon" style="margin-right: 20px">
+                                            <i class="fas fa-search" ></i>
+                                        </button>
+                                    </div>
+                                </form:form>
+
                                 <a href="/cart" class="position-relative me-4 my-auto">
                                     <i class="fa fa-shopping-bag fa-2x"></i>
                                     <span

@@ -2,6 +2,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html lang="en">
 
             </html>
@@ -44,11 +45,6 @@
                 <style>
 
 
-                    .ui-autocomplete {
-                        z-index: 1060; /* Cần cao hơn giá trị z-index của modal (mặc định là 1050) */
-                        position: absolute; /* Đảm bảo phần autocomplete luôn nằm trên modal */
-                    }
-
                 </style>
             </head>
 
@@ -64,31 +60,6 @@
 
                 <jsp:include page="../layout/header.jsp" />
 
-
-                <!-- Modal Search Start -->
-                <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content rounded-0">
-                            <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <form:form id="searchForm" action="/item/search" method="get" >
-                                <div class="  d-flex align-items-center">
-                                    <div class="input-group w-75 mx-auto d-flex">
-                                        <label for="tags"></label>
-                                        <input name="text" id="tags" type="search" class="form-control p-3" placeholder="Từ khóa"
-                                               aria-describedby="search-icon-1"/>
-                                        <button type="submit"  id="search-icon-1" class="input-group-text p-3"><i
-                                                class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form:form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal Search End -->
 
 
                 <jsp:include page="../layout/banner.jsp" />
@@ -620,36 +591,16 @@
                 <script
                     src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
                 <script>
-                    $('#searchModal').on('shown.bs.modal', function () {
-                        $("#tags").autocomplete("search", "");
-                    });
-
                     $( function() {
-                        var availableTags = [
-                            "ActionScript",
-                            "chuoi",
-                            "AppleScript",
-                            "Asp",
-                            "BASIC",
-                            "C",
-                            "C++",
-                            "Clojure",
-                            "COBOL",
-                            "ColdFusion",
-                            "Erlang",
-                            "Fortran",
-                            "Groovy",
-                            "Haskell",
-                            "Java",
-                            "JavaScript",
-                            "Lisp",
-                            "Perl",
-                            "PHP",
-                            "Python",
-                            "Ruby",
-                            "Scala",
-                            "Scheme"
-                        ];
+                        var availableTags = ${nameProducts};
+
+                        $( "#tags" ).autocomplete({
+                            source: availableTags
+                        });
+                    } );
+                    $( function() {
+                        var availableTags = ${nameProducts};
+
                         $( "#tags" ).autocomplete({
                             source: availableTags
                         });

@@ -370,7 +370,9 @@
                     <script src="/client/lib/waypoints/waypoints.min.js"></script>
                     <script src="/client/lib/lightbox/js/lightbox.min.js"></script>
                     <script src="/client/lib/owlcarousel/owl.carousel.min.js"></script>
-
+                    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+                    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+                    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
                     <!-- Template Javascript -->
                     <script src="/client/js/main.js"></script>
                     <script
