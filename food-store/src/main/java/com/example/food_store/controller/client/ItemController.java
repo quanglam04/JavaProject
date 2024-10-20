@@ -3,7 +3,6 @@ package com.example.food_store.controller.client;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,9 +23,8 @@ import com.example.food_store.domain.dto.ProductCriteriaDTO;
 import com.example.food_store.repository.CartDetailRepository;
 import com.example.food_store.repository.CartRepository;
 import com.example.food_store.service.ProductService;
-import com.example.food_store.service.SendEmail;
 import com.example.food_store.service.UserService;
-import com.fasterxml.jackson.databind.ser.std.StdArraySerializers.IntArraySerializer;
+import com.example.food_store.service.sendEmail.SendEmail;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -161,14 +159,9 @@ public class ItemController {
         User user = this.userService.getUserById(id);
         String email = user.getEmail();
 
-        Enumeration<String> attributes = request.getSession().getAttributeNames();
-        while (attributes.hasMoreElements()) {
-            String attribute = (String) attributes.nextElement();
-            System.out.println(">>>>>>>>>" + attribute + " : " + request.getSession().getAttribute(attribute));
-        }
-
         sendEmail.sendEmail(email, "Xác nhận đơn hàng",
                 "FoodStore chân thành cảm ơn bạn vì đã sử dụng sản phẩm của chúng tôi!");
+
         return "client/cart/afterOrder";
     }
 
@@ -200,15 +193,15 @@ public class ItemController {
             // page = 1
             // TODO: handle exception
         }
-        Pageable pageable = PageRequest.of(page - 1, 5);
+        Pageable pageable = PageRequest.of(page - 1, 6);
         if (productCriteriaDTO.getSort() != null && productCriteriaDTO.getSort().isPresent()) {
             String sort = productCriteriaDTO.getSort().get();
             if (sort.equals("gia-tang-dan")) {
-                pageable = PageRequest.of(page - 1, 5, Sort.by(Product_.PRICE).ascending());
+                pageable = PageRequest.of(page - 1, 6, Sort.by(Product_.PRICE).ascending());
             } else if (sort.equals("gia-giam-dan")) {
-                pageable = PageRequest.of(page - 1, 5, Sort.by(Product_.PRICE).descending());
+                pageable = PageRequest.of(page - 1, 6, Sort.by(Product_.PRICE).descending());
             } else {
-                pageable = PageRequest.of(page - 1, 5);
+                pageable = PageRequest.of(page - 1, 6);
             }
         }
 

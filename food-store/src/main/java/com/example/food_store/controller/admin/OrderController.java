@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.example.food_store.domain.Order;
 import com.example.food_store.domain.OrderDetail;
 import com.example.food_store.service.OrderService;
-import com.example.food_store.service.SendEmail;
+import com.example.food_store.service.sendEmail.SendEmail;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

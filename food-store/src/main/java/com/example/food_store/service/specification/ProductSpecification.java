@@ -38,6 +38,7 @@ public class ProductSpecification {
     }
 
     // case5
+
     public static Specification<Product> matchPrice(int min, int max) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.and(
                 criteriaBuilder.gt(root.get(Product_.PRICE), min),

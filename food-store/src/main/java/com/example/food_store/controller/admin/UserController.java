@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.food_store.domain.User;
 import com.example.food_store.service.UploadService;
 import com.example.food_store.service.UserService;
+import com.example.food_store.service.sendEmail.SendEmail;
 
 import jakarta.validation.Valid;
 
@@ -33,11 +34,14 @@ public class UserController {
     private final UserService userService;
     private final UploadService uploadService;
     private final PasswordEncoder passwordEncoder;
+    private final SendEmail sendEmail;
 
-    public UserController(UserService userService, UploadService uploadService, PasswordEncoder passwordEncoder) {
+    public UserController(UserService userService, UploadService uploadService, PasswordEncoder passwordEncoder,
+            SendEmail sendEmail) {
         this.userService = userService;
         this.uploadService = uploadService;
         this.passwordEncoder = passwordEncoder;
+        this.sendEmail = sendEmail;
 
     }
 
@@ -146,6 +150,17 @@ public class UserController {
         this.userService.deleteUserById(trinhlam.getId());
 
         return "redirect:/admin/user";
+    }
+
+    @GetMapping("/reset-password")
+    public String getResetPasswordPage() {
+        return "client/homepage/resetPassword";
+    }
+
+    @PostMapping("/send-request-to-mail")
+    public String sendRequestToMail(@RequestParam("email") String email) {
+        sendEmail.sendEmailWithHTML(email, "Xác nhận lấy lại mật khẩu");
+        return "redirect:/login";
     }
 
 }

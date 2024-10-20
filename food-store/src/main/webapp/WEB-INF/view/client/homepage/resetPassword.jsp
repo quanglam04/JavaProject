@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    BTL java: kien lam trong tuan anh huy
+    reset password
 </body>
 
 </html>
