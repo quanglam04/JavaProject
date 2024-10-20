@@ -3,6 +3,10 @@ package com.example.food_store.controller.admin;
 import java.util.List;
 
 import java.util.Optional;
+
+import java.util.UUID;
+
+import org.eclipse.tags.shaded.org.apache.regexp.RE;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -17,16 +21,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.food_store.domain.Token;
 import com.example.food_store.domain.User;
+import com.example.food_store.domain.dto.ChangePasswordDTO;
+import com.example.food_store.domain.dto.ResetPasswordDTO;
+import com.example.food_store.service.TokenService;
 import com.example.food_store.service.UploadService;
 import com.example.food_store.service.UserService;
 import com.example.food_store.service.sendEmail.SendEmail;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class UserController {
@@ -35,13 +45,15 @@ public class UserController {
     private final UploadService uploadService;
     private final PasswordEncoder passwordEncoder;
     private final SendEmail sendEmail;
+    private final TokenService tokenService;
 
     public UserController(UserService userService, UploadService uploadService, PasswordEncoder passwordEncoder,
-            SendEmail sendEmail) {
+            SendEmail sendEmail, TokenService tokenService) {
         this.userService = userService;
         this.uploadService = uploadService;
         this.passwordEncoder = passwordEncoder;
         this.sendEmail = sendEmail;
+        this.tokenService = tokenService;
 
     }
 
@@ -153,14 +165,51 @@ public class UserController {
     }
 
     @GetMapping("/reset-password")
-    public String getResetPasswordPage() {
+    public String getResetPasswordPage(@RequestParam("token") String token, Model model) {
+        String email = tokenService.getEmailByToken(token);
+        User user = this.userService.getUserByEmail(email);
+        Long id = user.getId();
+        ResetPasswordDTO resetPasswordDTO = new ResetPasswordDTO();
+        resetPasswordDTO.setUserID(id);
+        model.addAttribute("ResetPasswordDTO", resetPasswordDTO);
         return "client/homepage/resetPassword";
     }
 
     @PostMapping("/send-request-to-mail")
     public String sendRequestToMail(@RequestParam("email") String email) {
-        sendEmail.sendEmailWithHTML(email, "Xác nhận lấy lại mật khẩu");
+        String tokenEmail = UUID.randomUUID().toString();
+        Token token = new Token();
+        token.setEmail(email);
+        token.setToken(tokenEmail);
+        tokenService.saveToken(token);
+        String resetLink = "http://localhost:8080/reset-password?token=" + tokenEmail;
+        sendEmail.sendEmail(email, "Xác nhận khôi phục mật khẩu", "Nhấn vào đây để lấy lại mật khẩu: " + resetLink);
         return "redirect:/login";
+    }
+
+    @PostMapping("/process-reset-password")
+    public String getProcessResetPassword(@ModelAttribute("ResetPasswordDTO") @Valid ResetPasswordDTO ResetPasswordDTO,
+            BindingResult bindingResult,
+            Model model) {
+        if (bindingResult.hasErrors()) {
+
+            String error = bindingResult.getFieldError().getDefaultMessage();
+            model.addAttribute("errorNewpassword", error);
+            return "client/homepage/resetPassword";
+        }
+        String currentPassword = ResetPasswordDTO.getNewPassword();
+        String confirmPassword = ResetPasswordDTO.getConfirmPassword();
+        User user = this.userService.getUserById(ResetPasswordDTO.getUserID());
+
+        if (!currentPassword.equals(confirmPassword)) {
+            model.addAttribute("errorConfirmPassword", "Mật khẩu không khớp");
+            return "client/homepage/resetPassword";
+        } else {
+            user.setPassword(passwordEncoder.encode(currentPassword));
+            this.userService.handleSaveUser(user);
+            return "client/homepage/resetPasswordSuccess";
+        }
+
     }
 
 }

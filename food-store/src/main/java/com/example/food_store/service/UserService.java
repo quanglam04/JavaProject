@@ -24,10 +24,6 @@ public class UserService {
         this.orderRepository = orderRepository;
     }
 
-    public String handleHello() {
-        return "hello from service";
-    }
-
     public User handleSaveUser(User user) {
         return this.userRepository.save(user);
     }

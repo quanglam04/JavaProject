@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -17,6 +18,7 @@ import com.example.food_store.service.CustomUserDetailsService;
 import com.example.food_store.service.UserService;
 
 import jakarta.servlet.DispatcherType;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Configuration
 @EnableMethodSecurity(securedEnabled = true)
@@ -71,7 +73,8 @@ public class SecurityConfiguration {
                                 "/js/**",
                                 "/register/**",
                                 "/products/**",
-                                "/images/**", "/send-request-to-mail")
+                                "/images/**", "/send-request-to-mail", "reset-password/**",
+                                "/process-reset-password/**")
                         .permitAll()
 
                         .requestMatchers("/admin/**").hasRole("ADMIN")
