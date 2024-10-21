@@ -26,60 +26,60 @@
                                 </div>
                                 <div class="card fat">
                                     <div class="card-body">
-                                        <h4 class="card-title">Register</h4>
+                                        <h4 class="card-title">Đăng ký</h4>
                                         <form:form method="post" action="/verify" modelAttribute="registerUser">
 
-                                            <c:set var="errorPassword">
-                                                <form:errors path="confirmPassword" cssClass="invalid-feedback" />
-                                            </c:set>
-
-                                            <c:set var="errorEmail">
-                                                <form:errors path="email" cssClass="invalid-feedback" />
-                                            </c:set>
-                                            <c:set var="errorFullname">
-                                                <form:errors path="fullName" cssClass="invalid-feedback" />
-                                            </c:set>
 
                                             <div class="form-group">
-                                                <label for="name">Name</label>
+                                                <label for="name">Họ tên</label>
                                                 <form:input id="name" type="text"
                                                     class="form-control ${not empty errorFullname? 'is-invalid':''}"
-                                                    name="name" required="true" path="fullName" />
-                                                ${errorFullname}
+                                                    name="name" required="true" path="fullName"
+                                                    placeholder="Vui lòng nhập họ tên" />
+
+                                                <div style="color: red;">
+                                                    ${errorFullname}</div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="email">E-Mail Address</label>
+                                                <label for="email">Địa chỉ E-Mail</label>
                                                 <form:input id="email" type="email"
                                                     class="form-control ${not empty errorEmail? 'is-invalid':''}"
-                                                    name="email" required="true" path="email" />
-                                                ${errorEmail}
+                                                    name="email" required="true" path="email"
+                                                    placeholder="Vui lòng nhập địa chỉ E-Mail" />
+                                                <div style="color: red;">${errorEmail}</div>
+                                                <div style="color: red;">${errorEmail_2}</div>
 
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="password">Password</label>
+                                                <label for="password">Mật Khẩu</label>
                                                 <form:input id="password" type="password"
                                                     class="form-control ${not empty errorPassword? 'is-invalid':''}"
-                                                    name="password" required="true" path="password" />
+                                                    name="password" required="true" path="password"
+                                                    placeholder="Vui lòng nhập mật khẩu" />
 
-                                                ${errorPassword}
+                                                <div style="color: red; ">
+                                                    ${errorPassword}</div>
 
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="password">Confirm Password</label>
+                                                <label for="password">Xác nhận mật khẩu</label>
                                                 <form:input id="password" type="password" class="form-control"
-                                                    name="password" required="true" path="confirmPassword" />
+                                                    name="password" required="true" path="confirmPassword"
+                                                    placeholder="Vui lòng xác nhận mật khẩu" />
+
+                                                <div style="color: red;   ">
+                                                    ${errorConfirmPassword}</div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="custom-checkbox custom-control">
                                                     <input type="checkbox" name="agree" id="agree"
                                                         class="custom-control-input" required="true">
-                                                    <label for="agree" class="custom-control-label">I agree to the <a
-                                                            href="#">Terms
-                                                            and Conditions</a></label>
+                                                    <label for="agree" class="custom-control-label">Tôi đồng ý với các
+                                                        <a href="#">Điều khoản và Điều kiện</a></label>
                                                     <div class="invalid-feedback">
                                                         You must agree with our Terms and Conditions
                                                     </div>
@@ -88,14 +88,14 @@
 
                                             <div class="form-group m-0">
                                                 <button type="submit" class="btn btn-primary btn-block">
-                                                    Register
+                                                    Đăng ký
                                                 </button>
                                             </div>
                                         </form:form>
                                     </div>
 
                                     <div class="mt-4 text-center">
-                                        Already have an account? <a href="/login">Login</a>
+                                        Bạn đã có tài khoản? <a href="/login">Đăng nhập</a>
                                     </div>
                                 </div>
                             </div>

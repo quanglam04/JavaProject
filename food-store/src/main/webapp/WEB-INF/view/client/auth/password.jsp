@@ -28,24 +28,27 @@
                                 </div>
                                 <div class="card fat">
                                     <div class="card-body">
-                                        <h4 class="card-title">Forgot Password</h4>
+                                        <h4 class="card-title">Quên mật khẩu</h4>
                                         <form:form method="post" action="/send-request-to-mail"
                                             class="my-login-validation" novalidate="">
                                             <div class="form-group">
-                                                <label for="email">E-Mail Address</label>
+                                                <label for="email">Địa chỉ E-Mail</label>
                                                 <input id="email" type="email" class="form-control" name="email"
-                                                    value="" required autofocus>
+                                                    value="" required autofocus placeholder="Nhập địa chỉ E-Mail">
                                                 <div class="invalid-feedback">
                                                     Email is invalid
                                                 </div>
                                                 <div class="form-text text-muted">
-                                                    By clicking "Reset Password" we will send a password reset link
+                                                    Chúng tôi sẽ gửi một liên kết để đặt lại mật khẩu qua E-mail của
+                                                    bạn.
+                                                    Vui lòng nhập đúng
+                                                    thông tin và làm theo hướng dẫn.
                                                 </div>
                                             </div>
 
                                             <div class="form-group m-0">
                                                 <button type="submit" class="btn btn-primary btn-block">
-                                                    Reset Password
+                                                    Xác nhận
                                                 </button>
                                             </div>
                                         </form:form>

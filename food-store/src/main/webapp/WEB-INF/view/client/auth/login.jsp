@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="card fat">
                                     <div class="card-body">
-                                        <h4 class="card-title">Login</h4>
+                                        <h4 class="card-title">Đăng nhập</h4>
                                         <form method="POST" action="/login" class="my-login-validation" novalidate="">
                                             <c:if test="${param.error != null}">
                                                 <div class="my-2" style="color: red;">Invalid email or password.</div>
@@ -37,22 +37,22 @@
                                             </c:if>
 
                                             <div class="form-group">
-                                                <label for="email">E-Mail Address</label>
+                                                <label for="email">Tài khoản đăng nhập</label>
                                                 <input id="email" type="email" class="form-control" name="username"
-                                                    value="" required autofocus>
+                                                    value="" required autofocus placeholder="Nhập địa chỉ E-Mail">
                                                 <div class="invalid-feedback">
                                                     Email is invalid
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="password">Password
+                                                <label for="password">Mật khẩu
                                                     <a href="/password" class="float-right">
-                                                        Forgot Password?
+                                                        Quên mật khẩu?
                                                     </a>
                                                 </label>
                                                 <input id="password" type="password" class="form-control"
-                                                    name="password" required data-eye>
+                                                    name="password" required data-eye placeholder="Nhập mật khẩu">
                                                 <div class="invalid-feedback">
                                                     Password is required
                                                 </div>
@@ -65,22 +65,15 @@
 
                                             </div>
 
-                                            <div class="form-group">
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox" name="remember" id="remember"
-                                                        class="custom-control-input">
-                                                    <label for="remember" class="custom-control-label">Remember
-                                                        Me</label>
-                                                </div>
-                                            </div>
+
 
                                             <div class="form-group m-0">
                                                 <button type="submit" class="btn btn-primary btn-block">
-                                                    Login
+                                                    Đăng nhập
                                                 </button>
                                             </div>
                                             <div class="mt-4 text-center">
-                                                Don't have an account? <a href="/register">Create One</a>
+                                                Bạn chưa có tài khoản? <a href="/register">Đăng ký</a>
                                             </div>
                                         </form>
                                     </div>

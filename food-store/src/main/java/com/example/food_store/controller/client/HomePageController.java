@@ -104,6 +104,21 @@ public class HomePageController {
             Model model) {
         if (bindingResult.hasErrors()) {
             System.out.println(">>>>>>>>>>>>>" + bindingResult.getFieldError().getDefaultMessage());
+            String password = userDTO.getPassword();
+            String confirmPassword = userDTO.getConfirmPassword();
+            String email = userDTO.getEmail();
+            String regexp = "^[a-zA-Z0-9!#$%&*/=?`{|}]+@[a-zA-Z0-9.-]+$";
+            String name = userDTO.getFullName();
+            if (name.length() < 3)
+                model.addAttribute("errorFullname", "Họ tên phải có tối thiểu 3 ký tự");
+            if (this.userService.checkEmailExist(email))
+                model.addAttribute("errorEmail", "Email đã tồn tại. Vui lòng sử dụng Email khác");
+            if (!email.matches(regexp))
+                model.addAttribute("errorEmail_2", "Email không hợp lệ");
+            if (password.length() < 6)
+                model.addAttribute("errorPassword", "Mật khẩu phải có tối thiểu 6 ký tự");
+            else if (!confirmPassword.equals(password))
+                model.addAttribute("errorConfirmPassword", "Mật khẩu nhập không chính xác");
             return "client/auth/register";
         }
         String email = userDTO.getEmail();

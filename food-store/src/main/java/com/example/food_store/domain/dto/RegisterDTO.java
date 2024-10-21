@@ -12,7 +12,7 @@ public class RegisterDTO {
     @Email(message = "Email không hợp lệ", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
     private String email;
 
-    @Size(min = 6, message = "Password phải có tối thiểu 3 ký tự")
+    @Size(min = 6, message = "Mật khẩu phải có tối thiểu 6 ký tự")
     private String password;
 
     private String confirmPassword;

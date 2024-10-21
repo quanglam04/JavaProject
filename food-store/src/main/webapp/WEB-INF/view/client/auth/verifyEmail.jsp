@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="card fat">
                                     <div class="card-body">
-                                        <h4 class="card-title">Verify</h4>
+                                        <h4 class="card-title">Xác nhận</h4>
                                         <form:form method="post" action="/register" modelAttribute="userDTO"
                                             class="my-login-validation" novalidate="">
 
@@ -39,9 +39,10 @@
                                             <form:hidden path="OTP" />
 
                                             <div class="form-group">
-                                                <label for="OTP_check">OTP Code</label>
+                                                <label for="OTP_check">Mã OTP</label>
                                                 <input id="OTP_check" type="text" class="form-control" name="OTP_check"
-                                                    placeholder="Plese fill your OTP" value="" required autofocus>
+                                                    placeholder="Vui lòng nhập mã OTP của bạn" value="" required
+                                                    autofocus>
                                                 <div class="invalid-feedback">
                                                     OTP is invalid
                                                 </div>
@@ -54,7 +55,7 @@
 
                                             <div class="form-group m-0">
                                                 <button type="submit" class="btn btn-primary btn-block">
-                                                    Register
+                                                    Đăng ký
                                                 </button>
                                             </div>
                                         </form:form>
