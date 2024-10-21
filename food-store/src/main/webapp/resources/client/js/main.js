@@ -381,7 +381,7 @@
 
             },
             error: function (response) {
-                alert("có lỗi xảy ra, check code đi ba :v")
+                alert("có lỗi xảy ra")
                 console.log("error: ", response);
             }
 
@@ -389,6 +389,7 @@
     });
 
     $('.btnAddToCartDetail').click(function (event) {
+        console.log("JS loaded and event attached");
         event.preventDefault();
         if (!isLogin()) {
             $.toast({
@@ -419,6 +420,7 @@
                 $("#sumCart").text(sum)
                 //show message
                 $.toast({
+
                     heading: 'Giỏ hàng',
                     text: 'Thêm sản phẩm vào giỏ hàng thành công',
                     position: 'top-right',
@@ -462,6 +464,10 @@
             }
         });
     });
+
+
+
+
 
 
 

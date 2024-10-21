@@ -27,7 +27,7 @@
                                 <div class="card fat">
                                     <div class="card-body">
                                         <h4 class="card-title">Register</h4>
-                                        <form:form method="post" action="/register" modelAttribute="registerUser">
+                                        <form:form method="post" action="/verify" modelAttribute="registerUser">
 
                                             <c:set var="errorPassword">
                                                 <form:errors path="confirmPassword" cssClass="invalid-feedback" />

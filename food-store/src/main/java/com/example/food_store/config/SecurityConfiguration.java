@@ -74,7 +74,7 @@ public class SecurityConfiguration {
                                 "/register/**",
                                 "/products/**",
                                 "/images/**", "/send-request-to-mail", "reset-password/**",
-                                "/process-reset-password/**")
+                                "/process-reset-password/**", "/verify/**")
                         .permitAll()
 
                         .requestMatchers("/admin/**").hasRole("ADMIN")

@@ -16,6 +16,15 @@ public class RegisterDTO {
     private String password;
 
     private String confirmPassword;
+    private String OTP;
+
+    public String getOTP() {
+        return OTP;
+    }
+
+    public void setOTP(String oTP) {
+        this.OTP = oTP;
+    }
 
     public String getFullName() {
         return fullName;

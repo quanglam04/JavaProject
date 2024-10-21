@@ -18,6 +18,8 @@ import com.example.food_store.service.OrderService;
 import com.example.food_store.service.ProductService;
 import com.example.food_store.service.UploadService;
 import com.example.food_store.service.UserService;
+import com.example.food_store.service.sendEmail.SendEmail;
+import com.example.food_store.service.sendEmail.SendEmailToVerify;
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,14 +40,16 @@ public class HomePageController {
     private final PasswordEncoder passwordEncoder;
     private final OrderService orderService;
     private final UploadService uploadService;
+    private final SendEmailToVerify sendEmailToVerify;
 
     public HomePageController(ProductService productService, UserService userService, PasswordEncoder passwordEncoder,
-            OrderService orderService, UploadService uploadService) {
+            OrderService orderService, UploadService uploadService, SendEmailToVerify sendEmailToVerify) {
         this.productService = productService;
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.orderService = orderService;
         this.uploadService = uploadService;
+        this.sendEmailToVerify = sendEmailToVerify;
     }
 
     @RequestMapping("/")
@@ -76,22 +80,38 @@ public class HomePageController {
     }
 
     @PostMapping("/register")
-    public String handleRegister(@ModelAttribute("registerUser") @Valid RegisterDTO userDTO,
-            BindingResult bindingResult) {
+    public String handleRegister(@ModelAttribute("userDTO") @Valid RegisterDTO userDTO,
+            BindingResult bindingResult,
+            @RequestParam("OTP_check") String OTP,
+            Model model) {
 
-        if (bindingResult.hasErrors()) {
-            return "client/auth/register";
+        String OTP_real = userDTO.getOTP();
+        if (!OTP.equals(OTP_real)) {
+            model.addAttribute("errorVerifyEmail", "Mã OTP không chính xác. Vui lòng nhập lại.");
+            return "client/auth/verifyEmail";
         }
 
         User user = this.userService.registerDTOtoUser(userDTO);
-
         String hashPassword = this.passwordEncoder.encode(userDTO.getPassword());
-
         user.setPassword(hashPassword);
-
         user.setRole(this.userService.getRoleByName("USER"));
         this.userService.handleSaveUser(user);
-        return "redirect:/login";
+        return "client/homepage/registerSuccess";
+    }
+
+    @PostMapping("/verify")
+    public String getVerifyPage(@ModelAttribute("registerUser") @Valid RegisterDTO userDTO, BindingResult bindingResult,
+            Model model) {
+        if (bindingResult.hasErrors()) {
+            System.out.println(">>>>>>>>>>>>>" + bindingResult.getFieldError().getDefaultMessage());
+            return "client/auth/register";
+        }
+        String email = userDTO.getEmail();
+        String OTP = this.sendEmailToVerify.getRandom();
+        this.sendEmailToVerify.sendEmail(email, "Xác nhận đăng ký", "Mã xác nhận đăng ký của bạn là: " + OTP);
+        userDTO.setOTP(OTP);
+        model.addAttribute("userDTO", userDTO);
+        return "client/auth/verifyEmail";
     }
 
     @GetMapping("/login")

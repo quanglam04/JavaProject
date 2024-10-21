@@ -28,24 +28,33 @@
                                 </div>
                                 <div class="card fat">
                                     <div class="card-body">
-                                        <h4 class="card-title">Forgot Password</h4>
-                                        <form:form method="post" action="/send-request-to-mail"
+                                        <h4 class="card-title">Verify</h4>
+                                        <form:form method="post" action="/register" modelAttribute="userDTO"
                                             class="my-login-validation" novalidate="">
+
+                                            <form:hidden path="email" />
+                                            <form:hidden path="fullName" />
+                                            <form:hidden path="password" />
+                                            <form:hidden path="confirmPassword" />
+                                            <form:hidden path="OTP" />
+
                                             <div class="form-group">
-                                                <label for="email">E-Mail Address</label>
-                                                <input id="email" type="email" class="form-control" name="email"
-                                                    value="" required autofocus>
+                                                <label for="OTP_check">OTP Code</label>
+                                                <input id="OTP_check" type="text" class="form-control" name="OTP_check"
+                                                    placeholder="Plese fill your OTP" value="" required autofocus>
                                                 <div class="invalid-feedback">
-                                                    Email is invalid
+                                                    OTP is invalid
                                                 </div>
-                                                <div class="form-text text-muted">
-                                                    By clicking "Reset Password" we will send a password reset link
-                                                </div>
+                                                <c:if test="${not empty errorVerifyEmail}">
+                                                    <div class="error mt-2" style="color: red;">${errorVerifyEmail}
+                                                    </div>
+                                                </c:if>
+
                                             </div>
 
                                             <div class="form-group m-0">
                                                 <button type="submit" class="btn btn-primary btn-block">
-                                                    Reset Password
+                                                    Register
                                                 </button>
                                             </div>
                                         </form:form>
